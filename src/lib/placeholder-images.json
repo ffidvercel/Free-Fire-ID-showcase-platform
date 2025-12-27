@@ -1,3 +1,196 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "ff-1",
+      "description": "Free Fire character with Cobra MP40",
+      "imageUrl": "https://images.unsplash.com/photo-1634152962476-4b8a00e1915c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxnYW1lJTIwY2hhcmFjdGVyfGVufDB8fHx8MTc2NjgwNzM2Mnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "game character"
+    },
+    {
+      "id": "ff-1-gallery-1",
+      "description": "Close up of a futuristic gun skin",
+      "imageUrl": "https://images.unsplash.com/photo-1662072629492-b86a9d8e16b6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxnYW1lJTIwd2VhcG9ufGVufDB8fHx8MTc2NjgwNzM2MXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "game weapon"
+    },
+    {
+      "id": "ff-1-gallery-2",
+      "description": "In-game character doing an emote",
+      "imageUrl": "https://images.unsplash.com/photo-1622349851524-890cc3641b87?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxnYW1pbmclMjBlbW90ZXxlbnwwfHx8fDE3NjY4MDczNjF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "gaming emote"
+    },
+    {
+      "id": "ff-1-gallery-3",
+      "description": "Character bundle showcase",
+      "imageUrl": "https://images.unsplash.com/photo-1762008387452-25fe91ab3f90?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxjaGFyYWN0ZXIlMjBhcm1vcnxlbnwwfHx8fDE3NjY4MDczNjF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "character armor"
+    },
+    {
+      "id": "pubg-1",
+      "description": "PUBG character holding a Glacier M416",
+      "imageUrl": "https://images.unsplash.com/photo-1759680190846-d511f7ae1128?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxzb2xkaWVyJTIwZ2FtaW5nfGVufDB8fHx8MTc2NjgwNzM2MXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "soldier gaming"
+    },
+    {
+      "id": "pubg-1-gallery-1",
+      "description": "Kill feed effect of Glacier M416",
+      "imageUrl": "https://images.unsplash.com/photo-1687252774846-61b3dd991eac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxpY2UlMjBlZmZlY3R8ZW58MHx8fHwxNzY2ODA3MzYxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "ice effect"
+    },
+    {
+      "id": "pubg-1-gallery-2",
+      "description": "Pharaoh X-Suit showcase",
+      "imageUrl": "https://images.unsplash.com/photo-1714520555139-9805c89b746d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxlZ3lwdGlhbiUyMGFybW9yfGVufDB8fHx8MTc2NjgwNzM2MXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "egyptian armor"
+    },
+    {
+      "id": "pubg-1-gallery-3",
+      "description": "McLaren car skin in-game",
+      "imageUrl": "https://images.unsplash.com/photo-1519440862171-af26cf8c2a85?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8c3BvcnRzJTIwY2FyfGVufDB8fHx8MTc2NjgwNzM2MXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "sports car"
+    },
+    {
+      "id": "ff-2",
+      "description": "Free Fire character with OG Sakura bundle",
+      "imageUrl": "https://images.unsplash.com/photo-1689493731180-bbe43311eeef?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxzYW11cmFpJTIwd2FycmlvcnxlbnwwfHx8fDE3NjY4MDczNjF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "samurai warrior"
+    },
+    {
+      "id": "ff-2-gallery-1",
+      "description": "Close up of the Sakura mask",
+      "imageUrl": "https://images.unsplash.com/photo-1719169396223-f001b9f80a6d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxqYXBhbmVzZSUyMG1hc2t8ZW58MHx8fHwxNzY2ODA3MzYxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "japanese mask"
+    },
+    {
+      "id": "ff-2-gallery-2",
+      "description": "Hip Hop bundle showcase",
+      "imageUrl": "https://images.unsplash.com/photo-1626419964894-5448f0ac05cf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxyYXBwZXIlMjBzdHlsZXxlbnwwfHx8fDE3NjY4MDczNjF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "rapper style"
+    },
+    {
+      "id": "ff-2-gallery-3",
+      "description": "Blue Dino bundle in lobby",
+      "imageUrl": "https://images.unsplash.com/photo-1711511134484-af705a97319b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxkaW5vc2F1ciUyMGNvc3R1bWV8ZW58MHx8fHwxNzY2ODA3MzYxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "dinosaur costume"
+    },
+    {
+      "id": "pubg-2",
+      "description": "PUBG character with Conqueror frame",
+      "imageUrl": "https://images.unsplash.com/photo-1656761961843-c48763958692?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx0cm9waHklMjBhd2FyZHxlbnwwfHx8fDE3NjY3MjI1MjR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "trophy award"
+    },
+    {
+      "id": "pubg-2-gallery-1",
+      "description": "Collection of conqueror season frames",
+      "imageUrl": "https://images.unsplash.com/photo-1761244962049-e5bddc6ea5d4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxiYWRnZXMlMjBjb2xsZWN0aW9ufGVufDB8fHx8MTc2NjgwNzM2MXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "badges collection"
+    },
+    {
+      "id": "pubg-2-gallery-2",
+      "description": "Player stats showing high KD",
+      "imageUrl": "https://images.unsplash.com/photo-1765205361996-66c42e1c3967?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8ZGF0YSUyMGNoYXJ0fGVufDB8fHx8MTc2Njc4ODU5NHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "data chart"
+    },
+    {
+      "id": "pubg-2-gallery-3",
+      "description": "Character with a rare emote",
+      "imageUrl": "https://images.unsplash.com/photo-1765814143049-e98f25bdccbb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxkYW5jaW5nJTIwY2hhcmFjdGVyfGVufDB8fHx8MTc2NjgwNzM2MXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "dancing character"
+    },
+    {
+      "id": "ff-3",
+      "description": "Free Fire character with a dragon-themed AK47 skin",
+      "imageUrl": "https://images.unsplash.com/photo-1690789751116-b1f4f7ac8b44?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxkcmFnb24lMjBhcnR8ZW58MHx8fHwxNzY2ODA3MzYyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "dragon art"
+    },
+    {
+      "id": "ff-3-gallery-1",
+      "description": "Chrono character ability shield",
+      "imageUrl": "https://images.unsplash.com/photo-1653398615063-a7f65e35ea89?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxlbmVyZ3klMjBzaGllbGR8ZW58MHx8fHwxNzY2ODA3MzYyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "energy shield"
+    },
+    {
+      "id": "ff-3-gallery-2",
+      "description": "Showcase of multiple Evo gun skins",
+      "imageUrl": "https://images.unsplash.com/photo-1762514806172-ab9f8c0a0b79?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHx3ZWFwb24lMjBjb2xsZWN0aW9ufGVufDB8fHx8MTc2Njc0NTY2OXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "weapon collection"
+    },
+    {
+      "id": "ff-3-gallery-3",
+      "description": "Lobby view of a well-equipped character",
+      "imageUrl": "https://images.unsplash.com/photo-1590347830191-399f8397e2db?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Z2FtZSUyMGxvYmJ5fGVufDB8fHx8MTc2NjgwNzM2Mnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "game lobby"
+    },
+    {
+      "id": "pubg-3",
+      "description": "PUBG character wearing a stunning mythic outfit",
+      "imageUrl": "https://images.unsplash.com/photo-1762008387452-25fe91ab3f90?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxmYW50YXN5JTIwYXJtb3J8ZW58MHx8fHwxNzY2ODA3MzYxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "fantasy armor"
+    },
+    {
+      "id": "pubg-3-gallery-1",
+      "description": "A collection of different mythic fashion sets",
+      "imageUrl": "https://images.unsplash.com/photo-1644085078098-c653eb9e5617?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxjbG90aGluZyUyMGNvbGxlY3Rpb258ZW58MHx8fHwxNzY2NzY5MTIzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "clothing collection"
+    },
+    {
+      "id": "pubg-3-gallery-2",
+      "description": "The Fool M416 skin with its unique joker theme",
+      "imageUrl": "https://images.unsplash.com/photo-1741224548860-e5d785e067fe?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxqb2tlciUyMGFydHxlbnwwfHx8fDE3NjY4MDczNjF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "joker art"
+    },
+    {
+      "id": "pubg-3-gallery-3",
+      "description": "Blood Raven X-Suit with glowing red effects",
+      "imageUrl": "https://images.unsplash.com/photo-1706510364791-6270dfbf0bf4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxnbG93aW5nJTIwd2luZ3N8ZW58MHx8fHwxNzY2ODA3MzYyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "glowing wings"
+    },
+    {
+      "id": "ff-4",
+      "description": "A cool-looking Free Fire character ready for action",
+      "imageUrl": "https://images.unsplash.com/photo-1625420055396-d61b846ce03c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxhY3Rpb24lMjBoZXJvfGVufDB8fHx8MTc2NjgwNzM2MXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "action hero"
+    },
+    {
+      "id": "ff-4-gallery-1",
+      "description": "Alok character with his healing aura",
+      "imageUrl": "https://images.unsplash.com/photo-1631962590420-077084e3dedc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxnbG93aW5nJTIwYXVyYXxlbnwwfHx8fDE3NjY4MDczNjF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "glowing aura"
+    },
+    {
+      "id": "ff-4-gallery-2",
+      "description": "A showcase of budget-friendly but effective gun skins",
+      "imageUrl": "https://images.unsplash.com/photo-1758618851188-c4b8f2472da5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxyaWZsZSUyMGNvbGxlY3Rpb258ZW58MHx8fHwxNzY2ODA3MzYyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "rifle collection"
+    },
+    {
+      "id": "ff-4-gallery-3",
+      "description": "Character posing in the main lobby",
+      "imageUrl": "https://images.unsplash.com/photo-1739513275605-8f768065d402?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjaGFyYWN0ZXIlMjBwb3NlfGVufDB8fHx8MTc2NjgwNzM2MXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "character pose"
+    },
+    {
+      "id": "pubg-4",
+      "description": "A garage full of custom-skinned vehicles in PUBG",
+      "imageUrl": "https://images.unsplash.com/photo-1526726538690-5cbf956ae2fd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjYXIlMjBnYXJhZ2V8ZW58MHx8fHwxNzY2NzQ2MDg2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "car garage"
+    },
+    {
+      "id": "pubg-4-gallery-1",
+      "description": "A custom McLaren skin on a coupe in-game",
+      "imageUrl": "https://images.unsplash.com/photo-1617646131890-163a0e9e6658?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxvcmFuZ2UlMjBjYXJ8ZW58MHx8fHwxNzY2ODA3MzYxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "orange car"
+    },
+    {
+      "id": "pubg-4-gallery-2",
+      "description": "The Aegis UAZ, a heavily armored vehicle skin",
+      "imageUrl": "https://images.unsplash.com/photo-1637252211698-7d524345d4c2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8YXJtb3JlZCUyMHRydWNrfGVufDB8fHx8MTc2NjgwNzM2MXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "armored truck"
+    },
+    {
+      "id": "pubg-4-gallery-3",
+      "description": "A collection of rare motorcycle skins",
+      "imageUrl": "https://images.unsplash.com/photo-1762866263532-005f10d3bbdc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxtb3RvcmN5Y2xlJTIwY29sbGVjdGlvbnxlbnwwfHx8fDE3NjY4MDczNjF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "motorcycle collection"
+    }
+  ]
 }

@@ -1,3 +1,4 @@
+
 export type GameID = {
   id: string;
   title: string;
@@ -19,7 +20,7 @@ const gameIds: GameID[] = [
   {
     id: "ff-max-pro-01",
     title: "Cobra MP40 Beast",
-    price: 250,
+    price: 3750,
     level: 72,
     elitePasses: 15,
     likes: 12000,
@@ -35,7 +36,7 @@ const gameIds: GameID[] = [
   {
     id: "pubg-glacier-m4-02",
     title: "Glacier M416 King",
-    price: 400,
+    price: 6000,
     level: 78,
     elitePasses: 20,
     likes: 25000,
@@ -51,7 +52,7 @@ const gameIds: GameID[] = [
   {
     id: "ff-sakura-vet-03",
     title: "OG Sakura Veteran",
-    price: 600,
+    price: 9000,
     level: 68,
     elitePasses: 5,
     likes: 8500,
@@ -67,7 +68,7 @@ const gameIds: GameID[] = [
   {
     id: "pubg-conqueror-04",
     title: "Multi-Season Conqueror",
-    price: 320,
+    price: 4800,
     level: 75,
     elitePasses: 18,
     likes: 18000,
@@ -83,7 +84,7 @@ const gameIds: GameID[] = [
    {
     id: "ff-starter-pack-05",
     title: "Pro Starter Pack",
-    price: 80,
+    price: 1200,
     level: 60,
     elitePasses: 4,
     likes: 3000,
@@ -99,7 +100,7 @@ const gameIds: GameID[] = [
   {
     id: "pubg-mythic-hoard-06",
     title: "Mythic Fashion Hoard",
-    price: 550,
+    price: 8250,
     level: 80,
     elitePasses: 25,
     likes: 35000,
@@ -115,7 +116,7 @@ const gameIds: GameID[] = [
   {
     id: "ff-budget-beast-07",
     title: "Budget Beast",
-    price: 50,
+    price: 750,
     level: 55,
     elitePasses: 2,
     likes: 1500,
@@ -131,7 +132,7 @@ const gameIds: GameID[] = [
   {
     id: "pubg-vehicle-skin-08",
     title: "Vehicle Skin Garage",
-    price: 150,
+    price: 2250,
     level: 65,
     elitePasses: 10,
     likes: 9000,

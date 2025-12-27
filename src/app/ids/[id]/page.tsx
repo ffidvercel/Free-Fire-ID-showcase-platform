@@ -1,3 +1,4 @@
+
 'use client';
 
 import { getGameId } from "@/lib/data";
@@ -62,7 +63,7 @@ export default function IdDetailPage({ params }: Props) {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <div className="grid lg:grid-cols-5 gap-8">
+      <div className="grid lg:grid-cols-5 gap-8 lg:gap-12">
         <div className="lg:col-span-3">
           <Carousel className="w-full rounded-lg overflow-hidden border shadow-sm">
             <CarouselContent>
@@ -80,8 +81,8 @@ export default function IdDetailPage({ params }: Props) {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="ml-16" />
-            <CarouselNext className="mr-16" />
+            <CarouselPrevious className="ml-14 sm:ml-16" />
+            <CarouselNext className="mr-14 sm:mr-16" />
           </Carousel>
           
           <Card className="mt-8">
@@ -99,10 +100,10 @@ export default function IdDetailPage({ params }: Props) {
           <header>
             <div className="flex justify-between items-start">
                 <div>
-                    <h1 className="font-headline text-4xl font-bold text-primary tracking-tight">
+                    <h1 className="font-headline text-3xl md:text-4xl font-bold text-primary tracking-tight">
                     {gameId.title}
                     </h1>
-                    <p className="text-4xl font-bold text-accent mt-2">${gameId.price.toFixed(2)}</p>
+                    <p className="text-3xl md:text-4xl font-bold text-accent mt-2">${gameId.price.toFixed(2)}</p>
                 </div>
                 <Button variant="outline" size="icon" onClick={handleShare} aria-label="Share">
                     <Share2 className="h-5 w-5"/>

@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useState, useEffect } from "react";
@@ -15,6 +16,10 @@ export default function Home() {
     if (agreement === "true") {
       setAgreed(true);
       setShowPage(true);
+    } else {
+      // If no agreement is found, we still want to show the modal
+      // but not the page content. We can ensure agreed is false.
+      setAgreed(false);
     }
     setGameIds(getGameIds());
   }, []);
@@ -40,13 +45,14 @@ export default function Home() {
   }
 
   if (!showPage) {
+    // This state helps prevent a flash of content before the effect runs
     return null; // Or a loading spinner
   }
 
   return (
     <div className="container mx-auto px-4 py-8">
       <header className="text-center mb-12">
-        <h1 className="text-4xl md:text-6xl font-headline font-bold text-primary tracking-tighter">
+        <h1 className="text-4xl md:text-5xl font-headline font-bold text-primary tracking-tighter">
           Find Your Perfect Game ID
         </h1>
         <p className="text-lg text-muted-foreground mt-4 max-w-2xl mx-auto">

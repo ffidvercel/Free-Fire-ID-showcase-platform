@@ -17,6 +17,9 @@ export default function Header() {
             <Button variant="ghost" asChild>
               <Link href="/policy">Our Policy</Link>
             </Button>
+            <Button variant="ghost" asChild>
+              <Link href="/LICENSE">License</Link>
+            </Button>
           </nav>
         </div>
       </div>

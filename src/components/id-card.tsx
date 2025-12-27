@@ -28,7 +28,7 @@ export default function IdCard({ gameId }: IdCardProps) {
                 alt={gameId.title}
                 fill
                 className="object-cover"
-                data-ai-hint={mainImage.imageHint}
+                
               />
             )}
              <div className="absolute top-2 right-2 bg-primary/80 backdrop-blur-sm text-primary-foreground text-xs font-bold py-1 px-2 rounded-full flex items-center gap-1">

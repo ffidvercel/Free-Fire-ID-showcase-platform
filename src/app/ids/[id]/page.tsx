@@ -75,7 +75,7 @@ export default function IdDetailPage({ params }: Props) {
                       alt={`${gameId.title} - Image ${index + 1}`}
                       fill
                       className="object-cover"
-                      data-ai-hint={img.imageHint}
+                      
                     />}
                   </div>
                 </CarouselItem>

@@ -103,7 +103,7 @@ export default function IdDetailPage({ params }: Props) {
                     <h1 className="font-headline text-3xl md:text-4xl font-bold text-primary tracking-tight">
                     {gameId.title}
                     </h1>
-                    <p className="text-3xl md:text-4xl font-bold text-accent mt-2">${gameId.price.toFixed(2)}</p>
+                    <p className="text-3xl md:text-4xl font-bold text-accent mt-2">₹{gameId.price.toLocaleString()}</p>
                 </div>
                 <Button variant="outline" size="icon" onClick={handleShare} aria-label="Share">
                     <Share2 className="h-5 w-5"/>

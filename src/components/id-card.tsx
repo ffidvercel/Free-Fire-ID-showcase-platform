@@ -1,3 +1,4 @@
+
 import Link from "next/link";
 import Image from "next/image";
 import { GameID } from "@/lib/data";
@@ -39,7 +40,7 @@ export default function IdCard({ gameId }: IdCardProps) {
       </CardHeader>
       <CardContent className="flex-grow p-4">
         <h3 className="font-headline text-lg font-semibold truncate text-primary">{gameId.title}</h3>
-        <p className="text-2xl font-bold text-accent mt-2">${gameId.price.toFixed(2)}</p>
+        <p className="text-2xl font-bold text-accent mt-2">₹{gameId.price.toLocaleString()}</p>
       </CardContent>
       <CardFooter className="p-4 pt-0">
         <Button asChild className="w-full" variant="outline">

@@ -6,7 +6,7 @@ import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
 
 export const metadata: Metadata = {
-  title: 'FFID Hub - Buy and Sell Game IDs',
+  title: 'FFID VERCEL - Buy and Sell Game IDs',
   description:
     'A marketplace to buy, sell, and trade Free Fire, PUBG, and other game IDs.',
 };

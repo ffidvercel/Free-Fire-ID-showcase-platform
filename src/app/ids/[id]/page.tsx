@@ -141,7 +141,7 @@ export default function IdDetailPage({ params }: Props) {
                     </div>
                      <div className="mt-4 p-3 bg-yellow-100/50 border border-yellow-300/50 text-yellow-700 rounded-lg text-xs flex items-start gap-2">
                         <AlertTriangle className="h-4 w-4 flex-shrink-0 mt-0.5"/>
-                        <span>Remember to check all details with the seller before making any payment. FFID Hub is not responsible for private transactions.</span>
+                        <span>Remember to check all details with the seller before making any payment. FFID VERCEL is not responsible for private transactions.</span>
                     </div>
                 </CardContent>
            </Card>

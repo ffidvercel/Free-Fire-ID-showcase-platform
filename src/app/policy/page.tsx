@@ -10,7 +10,7 @@ export default function PolicyPage() {
             Our Platform Policy
           </h1>
           <p className="text-lg text-muted-foreground mt-4">
-            Understanding how FFID Hub works is important. Here are our core principles and disclaimers.
+            Understanding how FFID VERCEL works is important. Here are our core principles and disclaimers.
           </p>
         </header>
 
@@ -20,7 +20,7 @@ export default function PolicyPage() {
               <Mic className="h-6 w-6 text-accent" />A Platform for Fun
             </h2>
             <p className="mt-3 text-muted-foreground">
-              FFID Hub was created with the primary intention of being an entertaining and fun platform. We are a community of gamers showcasing interesting game accounts.
+              FFID VERCEL was created with the primary intention of being an entertaining and fun platform. We are a community of gamers showcasing interesting game accounts.
             </p>
             <p className="mt-2 text-muted-foreground">
               In line with this, any direct communication you might receive originating from a contact made via our website, such as a phone call, may also be for fun and entertainment purposes. We encourage all users to interact with a lighthearted and friendly spirit.
@@ -33,7 +33,7 @@ export default function PolicyPage() {
               Direct & Private Transactions
             </h2>
             <p className="mt-3 text-muted-foreground">
-              FFID Hub is a listing or advertising website, not a marketplace or escrow service.
+              FFID VERCEL is a listing or advertising website, not a marketplace or escrow service.
             </p>
             <ul className="list-disc pl-6 mt-4 space-y-2 text-muted-foreground">
               <li>We <span className="font-semibold text-foreground">do not</span> process payments.</li>
@@ -54,7 +54,7 @@ export default function PolicyPage() {
               Your safety and legal awareness are crucial. Please read the following carefully:
             </p>
             <ul className="list-disc pl-6 mt-4 space-y-2 text-muted-foreground">
-              <li><span className="font-semibold text-foreground">No Affiliation:</span> FFID Hub is an independent entity and is not affiliated with, endorsed by, or connected to Garena, Krafton, or any game developer.</li>
+              <li><span className="font-semibold text-foreground">No Affiliation:</span> FFID VERCEL is an independent entity and is not affiliated with, endorsed by, or connected to Garena, Krafton, or any game developer.</li>
               <li><span className="font-semibold text-foreground">Terms of Service:</span> The buying, selling, or trading of game accounts may violate the Terms of Service (ToS) of the respective games. This can result in penalties, including permanent account suspension.</li>
               <li><span className="font-semibold text-foreground">User Responsibility:</span> Users are solely responsible for their actions and for ensuring they comply with the policies of the game companies. You use this platform at your own risk.</li>
             </ul>

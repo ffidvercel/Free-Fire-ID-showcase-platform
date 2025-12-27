@@ -30,7 +30,7 @@ export default function AgreementModal({ onAgree, onDisagree }: AgreementModalPr
         <AlertDialogHeader>
           <AlertDialogTitle className="font-headline text-2xl flex items-center gap-2">
             <Info className="text-accent" />
-            Welcome to FFID Hub!
+            Welcome to FFID VERCEL!
           </AlertDialogTitle>
           <AlertDialogDescription className="pt-2 text-base">
             This website is primarily for entertainment and fun. Before you continue, please read and agree to our terms.

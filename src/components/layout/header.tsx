@@ -10,7 +10,7 @@ export default function Header() {
           <Link href="/" className="flex items-center gap-2">
             <Gamepad2 className="h-7 w-7 text-accent" />
             <span className="text-xl font-bold font-headline text-primary tracking-tighter">
-              FFID Hub
+              FFID VERCEL
             </span>
           </Link>
           <nav>

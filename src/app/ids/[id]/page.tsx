@@ -1,5 +1,6 @@
+'use client';
+
 import { getGameId } from "@/lib/data";
-import { notFound } from "next/navigation";
 import Image from "next/image";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import {
@@ -11,8 +12,9 @@ import {
 } from "@/components/ui/carousel";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Star, ThumbsUp, Crown, CheckCircle, Gamepad2, AlertTriangle } from "lucide-react";
+import { Star, ThumbsUp, Crown, CheckCircle, Gamepad2, AlertTriangle, Share2 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { useToast } from "@/hooks/use-toast";
 
 type Props = {
   params: { id: string };
@@ -28,11 +30,31 @@ const WhatsAppIcon = (props: React.SVGProps<SVGSVGElement>) => (
 
 
 export default function IdDetailPage({ params }: Props) {
+  const { toast } = useToast();
   const gameId = getGameId(params.id);
 
   if (!gameId) {
-    notFound();
+    // A proper notFound() should be handled in a server component wrapper if needed,
+    // but for a client component, we can render a message or redirect.
+    return <div className="container mx-auto text-center py-20">Account not found.</div>;
   }
+  
+  const handleShare = () => {
+    const url = window.location.href;
+    navigator.clipboard.writeText(url).then(() => {
+      toast({
+        title: "Link Copied!",
+        description: "The link to this page has been copied to your clipboard.",
+      });
+    }).catch(err => {
+      console.error('Failed to copy: ', err);
+      toast({
+        variant: "destructive",
+        title: "Oops!",
+        description: "Could not copy the link.",
+      });
+    });
+  };
 
   const galleryImages = gameId.gallery
     .map((id) => PlaceHolderImages.find((img) => img.id === id))
@@ -75,10 +97,17 @@ export default function IdDetailPage({ params }: Props) {
 
         <div className="lg:col-span-2 space-y-6">
           <header>
-            <h1 className="font-headline text-4xl font-bold text-primary tracking-tight">
-              {gameId.title}
-            </h1>
-            <p className="text-4xl font-bold text-accent mt-2">${gameId.price.toFixed(2)}</p>
+            <div className="flex justify-between items-start">
+                <div>
+                    <h1 className="font-headline text-4xl font-bold text-primary tracking-tight">
+                    {gameId.title}
+                    </h1>
+                    <p className="text-4xl font-bold text-accent mt-2">${gameId.price.toFixed(2)}</p>
+                </div>
+                <Button variant="outline" size="icon" onClick={handleShare} aria-label="Share">
+                    <Share2 className="h-5 w-5"/>
+                </Button>
+            </div>
           </header>
 
           <div className="grid grid-cols-2 gap-4 text-center">

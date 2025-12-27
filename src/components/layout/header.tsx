@@ -2,7 +2,8 @@
 'use client';
 
 import Link from 'next/link';
-import { Gamepad2, Menu, X, FileText, Shield } from 'lucide-react';
+import Image from 'next/image';
+import { Menu, X, FileText, Shield, Gamepad2 } from 'lucide-react';
 import { Button } from '../ui/button';
 import { useState } from 'react';
 import {
@@ -27,10 +28,7 @@ export default function Header() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center gap-2">
-            <Gamepad2 className="h-7 w-7 text-accent" />
-            <span className="text-xl font-bold font-headline text-primary tracking-tighter">
-              FFID VERCEL
-            </span>
+             <Image src="https://storage.googleapis.com/project-os-prod/images/b1b18128-55a0-47b2-9d33-ea84a0d9b4b0.png" alt="FFID VERCEL Logo" width={140} height={40} className="h-10 w-auto" />
           </Link>
 
           {/* Desktop Nav */}
@@ -62,10 +60,7 @@ export default function Header() {
           <SheetHeader className="p-4 border-b">
             <div className="flex items-center justify-between">
                 <Link href="/" className="flex items-center gap-2" onClick={() => setIsMenuOpen(false)}>
-                    <Gamepad2 className="h-7 w-7 text-accent" />
-                    <span className="text-xl font-bold font-headline text-primary tracking-tighter">
-                    FFID VERCEL
-                    </span>
+                    <Image src="https://storage.googleapis.com/project-os-prod/images/b1b18128-55a0-47b2-9d33-ea84a0d9b4b0.png" alt="FFID VERCEL Logo" width={140} height={40} className="h-10 w-auto" />
                 </Link>
               <SheetClose asChild>
                 <Button variant="ghost" size="icon">

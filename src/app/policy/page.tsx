@@ -2,10 +2,10 @@ import { Shield, Users, Mic, Info, FileText } from 'lucide-react';
 
 export default function PolicyPage() {
   return (
-    <div className="bg-card">
+    <div className="bg-background">
       <div className="container mx-auto px-4 py-12 md:py-20">
         <header className="text-center max-w-3xl mx-auto mb-12">
-          <FileText className="mx-auto h-12 w-12 text-accent mb-4" />
+          <Shield className="mx-auto h-12 w-12 text-accent mb-4" />
           <h1 className="text-4xl md:text-5xl font-bold font-headline text-primary tracking-tighter">
             Our Platform Policy
           </h1>
@@ -15,7 +15,7 @@ export default function PolicyPage() {
         </header>
 
         <div className="max-w-4xl mx-auto space-y-8">
-          <div className="p-6 border rounded-lg bg-background">
+          <div className="p-6 border rounded-lg bg-card">
             <h2 className="font-headline text-2xl font-semibold flex items-center gap-3 text-primary">
               <Mic className="h-6 w-6 text-accent" />A Platform for Fun
             </h2>
@@ -27,7 +27,7 @@ export default function PolicyPage() {
             </p>
           </div>
 
-          <div className="p-6 border rounded-lg bg-background">
+          <div className="p-6 border rounded-lg bg-card">
             <h2 className="font-headline text-2xl font-semibold flex items-center gap-3 text-primary">
               <Users className="h-6 w-6 text-accent" />
               Direct & Private Transactions
@@ -45,9 +45,9 @@ export default function PolicyPage() {
             </p>
           </div>
 
-          <div className="p-6 border rounded-lg bg-background">
+          <div className="p-6 border rounded-lg bg-card">
             <h2 className="font-headline text-2xl font-semibold flex items-center gap-3 text-primary">
-              <Shield className="h-6 w-6 text-accent" />
+              <FileText className="h-6 w-6 text-accent" />
               Legal Disclaimer
             </h2>
             <p className="mt-3 text-muted-foreground">
@@ -60,7 +60,7 @@ export default function PolicyPage() {
             </ul>
           </div>
           
-           <div className="p-6 border rounded-lg bg-background">
+           <div className="p-6 border rounded-lg bg-card">
             <h2 className="font-headline text-2xl font-semibold flex items-center gap-3 text-primary">
               <Info className="h-6 w-6 text-accent" />
               In Summary

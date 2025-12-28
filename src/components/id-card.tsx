@@ -42,19 +42,19 @@ export default function IdCard({ gameId }: IdCardProps) {
           <p className="text-2xl font-bold text-accent mt-1">₹{gameId.price.toLocaleString()}</p>
         </CardContent>
         <CardFooter className="p-4 pt-0 flex-col items-start gap-3">
-            <div className="space-y-1.5 text-xs text-muted-foreground w-full">
-                <div className="flex items-center gap-1.5">
+            <div className="space-y-1.5 text-xs text-muted-foreground w-full h-[60px]">
+                {gameId.isVerified && <div className="flex items-center gap-1.5">
                     <ShieldCheck className="w-3.5 h-3.5 text-green-500" />
                     <span>Verified account</span>
-                </div>
-                <div className="flex items-center gap-1.5">
+                </div>}
+                {gameId.hasInstantTransfer && <div className="flex items-center gap-1.5">
                     <Zap className="w-3.5 h-3.5 text-blue-500" />
                     <span>Instant transfer</span>
-                </div>
-                <div className="flex items-center gap-1.5">
+                </div>}
+                {gameId.isPrivateAndSecure && <div className="flex items-center gap-1.5">
                     <Lock className="w-3.5 h-3.5 text-gray-500" />
                     <span>Private & secure</span>
-                </div>
+                </div>}
             </div>
             <div className="w-full text-sm font-medium text-accent inline-flex items-center justify-center group-hover:underline">
                 View Details

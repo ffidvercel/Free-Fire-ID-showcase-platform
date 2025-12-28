@@ -14,6 +14,9 @@ export type GameID = {
     instagram: string;
   };
   features: string[];
+  isVerified?: boolean;
+  hasInstantTransfer?: boolean;
+  isPrivateAndSecure?: boolean;
 };
 
 const gameIds: GameID[] = [
@@ -32,6 +35,9 @@ const gameIds: GameID[] = [
       instagram: "ffidsellerpro"
     },
     features: ["Cobra MP40", "Titan Scar", "All Elite Passes (10+)", "15+ Rare Bundles", "High Like Count"],
+    isVerified: true,
+    hasInstantTransfer: true,
+    isPrivateAndSecure: true,
   },
   {
     id: "pubg-glacier-m4-02",
@@ -48,6 +54,8 @@ const gameIds: GameID[] = [
       instagram: "ffidsellerpro"
     },
     features: ["Glacier M416 (Max)", "Pharaoh X-Suit", "Godzilla AWM", "McLaren & Tesla Skins"],
+    isVerified: true,
+    isPrivateAndSecure: true,
   },
   {
     id: "ff-sakura-vet-03",
@@ -64,6 +72,8 @@ const gameIds: GameID[] = [
       instagram: "ffidsellerpro"
     },
     features: ["Season 1 Sakura Bundle", "Season 2 Hip Hop Bundle", "Blue Dino Bundle", "Angel Wings Backpack"],
+    isVerified: true,
+    isPrivateAndSecure: true,
   },
   {
     id: "pubg-conqueror-04",
@@ -80,6 +90,8 @@ const gameIds: GameID[] = [
       instagram: "ffidsellerpro"
     },
     features: ["5x Conqueror Frames", "High KD Ratio", "Rare Emotes", "Full RP every season"],
+    isVerified: true,
+    hasInstantTransfer: true,
   },
    {
     id: "ff-starter-pack-05",
@@ -96,6 +108,8 @@ const gameIds: GameID[] = [
       instagram: "ffidsellerpro"
     },
     features: ["AK47 - Blue Flame Draco", "Chrono Character", "4+ Gun Evo Skins", "Good starting stats"],
+    hasInstantTransfer: true,
+    isPrivateAndSecure: true,
   },
   {
     id: "pubg-mythic-hoard-06",
@@ -112,6 +126,7 @@ const gameIds: GameID[] = [
       instagram: "ffidsellerpro"
     },
     features: ["30+ Mythic Outfits", "The Fool - M416", "Blood Raven X-Suit", "Huge Inventory"],
+    isVerified: true,
   },
   {
     id: "ff-budget-beast-07",
@@ -128,6 +143,7 @@ const gameIds: GameID[] = [
       instagram: "ffidsellerpro"
     },
     features: ["Decent Gun Skins", "Alok & K Characters", "Great Value"],
+    isPrivateAndSecure: true,
   },
   {
     id: "pubg-vehicle-skin-08",
@@ -144,6 +160,9 @@ const gameIds: GameID[] = [
       instagram: "ffidsellerpro"
     },
     features: ["Multiple McLaren Skins", "Aegis UAZ (Lvl 7)", "Rare Motorcycle Skins", "Full Garage"],
+    isVerified: true,
+    hasInstantTransfer: true,
+    isPrivateAndSecure: true,
   },
 ];
 

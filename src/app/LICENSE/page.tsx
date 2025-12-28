@@ -1,3 +1,4 @@
+
 import { Copyright, Ban, Shield } from 'lucide-react';
 
 export default function LicensePage() {

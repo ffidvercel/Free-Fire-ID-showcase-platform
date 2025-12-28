@@ -1,3 +1,4 @@
+
 import { Shield, Users, Mic, Info, FileText } from 'lucide-react';
 
 export default function PolicyPage() {

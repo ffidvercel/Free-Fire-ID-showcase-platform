@@ -9,6 +9,26 @@ export const metadata: Metadata = {
   title: 'FFID VERCEL - Buy and Sell Game IDs',
   description:
     'A marketplace to buy, sell, and trade Free Fire, PUBG, and other game IDs.',
+  openGraph: {
+    title: 'FFID VERCEL - Buy and Sell Game IDs',
+    description: 'The best place to find, buy, and sell exclusive game accounts securely.',
+    images: [
+      {
+        url: 'https://storage.googleapis.com/project-os-prod/images/b1b18128-55a0-47b2-9d33-ea84a0d9b4b0.png',
+        width: 1200,
+        height: 630,
+        alt: 'FFID VERCEL Logo',
+      },
+    ],
+    type: 'website',
+    url: 'https://ffid-vercel.app', // Replace with your actual domain
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'FFID VERCEL - Buy and Sell Game IDs',
+    description: 'The best place to find, buy, and sell exclusive game accounts securely.',
+    images: ['https://storage.googleapis.com/project-os-prod/images/b1b18128-55a0-47b2-9d33-ea84a0d9b4b0.png'],
+  },
 };
 
 export default function RootLayout({

@@ -36,8 +36,12 @@ export default function Header() {
     { name: 'Instagram', url: 'https://www.instagram.com/ffidvercel/', icon: InstagramIcon, color: "bg-gradient-to-r from-purple-500 to-pink-500" },
     { name: 'Discord', url: 'https://discord.gg/3XaZYzr3', icon: DiscordIcon, color: "bg-[#5865F2]" },
     { name: 'Facebook', url: 'https://www.facebook.com/profile.php?id=61585687532032&sk=about', icon: Facebook, color: "bg-[#1877F2]" },
-    { name: 'YouTube', url: 'https://www.youtube.com/@FFID-Vercel', icon: Youtube, color: "bg-[#FF0000]" }
   ];
+
+  const youtubeLinks = [
+    { name: 'FFID-Vercel', url: 'https://www.youtube.com/@FFID-Vercel' },
+    { name: 'FFIDVercel', url: 'https://www.youtube.com/@FFIDVercel' },
+  ]
 
   return (
     <header className="bg-card/80 backdrop-blur-sm border-b sticky top-0 z-50">
@@ -80,6 +84,35 @@ export default function Header() {
                         </a>
                     </Button>
                   ))}
+                   <Dialog>
+                    <DialogTrigger asChild>
+                      <Button className="justify-start text-white hover:opacity-90 bg-[#FF0000]">
+                         <Youtube className="mr-3 h-5 w-5" />
+                         <span>Follow us on YouTube</span>
+                      </Button>
+                    </DialogTrigger>
+                    <DialogContent className="sm:max-w-sm">
+                       <DialogHeader>
+                         <DialogTitle className="font-headline text-2xl flex items-center gap-2">
+                           <Youtube className="text-accent" />
+                           Our YouTube Channels
+                         </DialogTitle>
+                         <DialogDescription>
+                           We have two channels! Check them both out.
+                         </DialogDescription>
+                       </DialogHeader>
+                       <div className="flex flex-col space-y-3 pt-4">
+                         {youtubeLinks.map(yt => (
+                           <Button key={yt.name} className="justify-start text-white hover:opacity-90 bg-[#FF0000]" asChild>
+                             <a href={yt.url} target="_blank" rel="noopener noreferrer">
+                                <Youtube className="mr-3 h-5 w-5" />
+                                <span>{yt.name}</span>
+                             </a>
+                           </Button>
+                         ))}
+                       </div>
+                    </DialogContent>
+                  </Dialog>
                 </div>
               </DialogContent>
             </Dialog>
@@ -160,6 +193,35 @@ export default function Header() {
                                     </a>
                                 </Button>
                             ))}
+                            <Dialog>
+                                <DialogTrigger asChild>
+                                <Button className="justify-start text-white hover:opacity-90 bg-[#FF0000]">
+                                    <Youtube className="mr-3 h-5 w-5" />
+                                    <span>Follow us on YouTube</span>
+                                </Button>
+                                </DialogTrigger>
+                                <DialogContent className="sm:max-w-sm">
+                                <DialogHeader>
+                                    <DialogTitle className="font-headline text-2xl flex items-center gap-2">
+                                    <Youtube className="text-accent" />
+                                    Our YouTube Channels
+                                    </DialogTitle>
+                                    <DialogDescription>
+                                    We have two channels! Check them both out.
+                                    </DialogDescription>
+                                </DialogHeader>
+                                <div className="flex flex-col space-y-3 pt-4">
+                                    {youtubeLinks.map(yt => (
+                                    <Button key={yt.name} className="justify-start text-white hover:opacity-90 bg-[#FF0000]" asChild>
+                                        <a href={yt.url} target="_blank" rel="noopener noreferrer">
+                                        <Youtube className="mr-3 h-5 w-5" />
+                                        <span>{yt.name}</span>
+                                        </a>
+                                    </Button>
+                                    ))}
+                                </div>
+                                </DialogContent>
+                            </Dialog>
                             </div>
                         </DialogContent>
                     </Dialog>

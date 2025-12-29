@@ -23,7 +23,6 @@ export async function generateMetadata(
 
   const mainImage = PlaceHolderImages.find(img => img.id === gameId.mainImage);
 
-  // optionally access and extend (rather than replace) parent metadata
   const previousImages = (await parent).openGraph?.images || [];
 
   return {

@@ -1,9 +1,8 @@
-
 'use client';
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { Menu, X, FileText, Shield, Gamepad2 } from 'lucide-react';
+import { Menu, X, FileText, Shield, Gamepad2, Users, Youtube, Facebook } from 'lucide-react';
 import { Button } from '../ui/button';
 import { useState } from 'react';
 import {
@@ -13,6 +12,16 @@ import {
   SheetHeader,
 } from '@/components/ui/sheet';
 import { Separator } from '../ui/separator';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
+import { DiscordIcon, InstagramIcon } from '@/components/social-icons';
+
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,6 +30,13 @@ export default function Header() {
     { href: '/', label: 'Home', icon: Gamepad2 },
     { href: '/policy', label: 'Our Policy', icon: Shield },
     { href: '/LICENSE', label: 'License', icon: FileText },
+  ];
+
+  const socialLinks = [
+    { name: 'Instagram', url: 'https://www.instagram.com/ffidvercel/', icon: InstagramIcon, color: "bg-gradient-to-r from-purple-500 to-pink-500" },
+    { name: 'Discord', url: 'https://discord.gg/3XaZYzr3', icon: DiscordIcon, color: "bg-[#5865F2]" },
+    { name: 'Facebook', url: 'https://www.facebook.com/profile.php?id=61585687532032&sk=about', icon: Facebook, color: "bg-[#1877F2]" },
+    { name: 'YouTube', url: 'https://www.youtube.com/@FFID-Vercel', icon: Youtube, color: "bg-[#FF0000]" }
   ];
 
   return (
@@ -38,6 +54,35 @@ export default function Header() {
                   <Link href={link.href}>{link.label}</Link>
                 </Button>
             ))}
+             <Dialog>
+              <DialogTrigger asChild>
+                <Button variant="ghost">
+                  <Users className="mr-2 h-4 w-4" />
+                  Follow Us
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="sm:max-w-md">
+                <DialogHeader>
+                  <DialogTitle className="font-headline text-2xl flex items-center gap-2">
+                    <Users className="text-accent" />
+                    Follow Our Socials
+                  </DialogTitle>
+                  <DialogDescription>
+                    Stay updated with the latest accounts, news, and community events.
+                  </DialogDescription>
+                </DialogHeader>
+                <div className="flex flex-col space-y-3 pt-4">
+                  {socialLinks.map(social => (
+                     <Button key={social.name} className={`justify-start text-white hover:opacity-90 ${social.color}`} asChild>
+                        <a href={social.url} target="_blank" rel="noopener noreferrer">
+                          <social.icon className="mr-3 h-5 w-5" />
+                          <span>Follow us on {social.name}</span>
+                        </a>
+                    </Button>
+                  ))}
+                </div>
+              </DialogContent>
+            </Dialog>
           </nav>
 
           {/* Mobile Nav Trigger */}
@@ -86,6 +131,39 @@ export default function Header() {
                   {index < navLinks.length - 1 && <Separator />}
                 </div>
               ))}
+               <div key="follow-us">
+                    <Dialog>
+                        <DialogTrigger asChild>
+                             <button
+                                className="flex items-center gap-3 py-3 text-lg font-medium w-full"
+                              >
+                                <Users className="h-5 w-5 text-accent"/>
+                                Follow Us
+                              </button>
+                        </DialogTrigger>
+                        <DialogContent className="sm:max-w-md">
+                            <DialogHeader>
+                            <DialogTitle className="font-headline text-2xl flex items-center gap-2">
+                                <Users className="text-accent" />
+                                Follow Our Socials
+                            </DialogTitle>
+                            <DialogDescription>
+                                Stay updated with the latest accounts, news, and community events.
+                            </DialogDescription>
+                            </DialogHeader>
+                            <div className="flex flex-col space-y-3 pt-4">
+                            {socialLinks.map(social => (
+                                <Button key={social.name} className={`justify-start text-white hover:opacity-90 ${social.color}`} asChild>
+                                    <a href={social.url} target="_blank" rel="noopener noreferrer">
+                                    <social.icon className="mr-3 h-5 w-5" />
+                                    <span>Follow us on {social.name}</span>
+                                    </a>
+                                </Button>
+                            ))}
+                            </div>
+                        </DialogContent>
+                    </Dialog>
+              </div>
             </nav>
           </div>
         </SheetContent>

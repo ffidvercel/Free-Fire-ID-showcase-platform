@@ -48,17 +48,17 @@ export default function Header() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center gap-2">
-             <Image src="https://storage.googleapis.com/project-os-prod/images/b1b18128-55a0-47b2-9d33-ea84a0d9b4b0.png" alt="FFID VERCEL Logo" width={140} height={40} className="h-10 w-auto" />
+            <Image src="/logo.png" alt="FFID VERCEL Logo" width={48} height={48} className="h-12 w-12 rounded-full object-cover border-2 border-primary/20" />
           </Link>
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-2">
             {navLinks.slice(1).map((link) => (
-               <Button variant="ghost" asChild key={link.href}>
-                  <Link href={link.href}>{link.label}</Link>
-                </Button>
+              <Button variant="ghost" asChild key={link.href}>
+                <Link href={link.href}>{link.label}</Link>
+              </Button>
             ))}
-             <Dialog>
+            <Dialog>
               <DialogTrigger asChild>
                 <Button variant="ghost">
                   <Users className="mr-2 h-4 w-4" />
@@ -77,40 +77,40 @@ export default function Header() {
                 </DialogHeader>
                 <div className="flex flex-col space-y-3 pt-4">
                   {socialLinks.map(social => (
-                     <Button key={social.name} className={`justify-start text-white hover:opacity-90 ${social.color}`} asChild>
-                        <a href={social.url} target="_blank" rel="noopener noreferrer">
-                          <social.icon className="mr-3 h-5 w-5" />
-                          <span>Follow us on {social.name}</span>
-                        </a>
+                    <Button key={social.name} className={`justify-start text-white hover:opacity-90 ${social.color}`} asChild>
+                      <a href={social.url} target="_blank" rel="noopener noreferrer">
+                        <social.icon className="mr-3 h-5 w-5" />
+                        <span>Follow us on {social.name}</span>
+                      </a>
                     </Button>
                   ))}
-                   <Dialog>
+                  <Dialog>
                     <DialogTrigger asChild>
                       <Button className="justify-start text-white hover:opacity-90 bg-[#FF0000]">
-                         <Youtube className="mr-3 h-5 w-5" />
-                         <span>Follow us on YouTube</span>
+                        <Youtube className="mr-3 h-5 w-5" />
+                        <span>Follow us on YouTube</span>
                       </Button>
                     </DialogTrigger>
                     <DialogContent className="sm:max-w-sm">
-                       <DialogHeader>
-                         <DialogTitle className="font-headline text-2xl flex items-center gap-2">
-                           <Youtube className="text-accent" />
-                           Our YouTube Channels
-                         </DialogTitle>
-                         <DialogDescription>
-                           We have two channels! Check them both out.
-                         </DialogDescription>
-                       </DialogHeader>
-                       <div className="flex flex-col space-y-3 pt-4">
-                         {youtubeLinks.map(yt => (
-                           <Button key={yt.name} className="justify-start text-white hover:opacity-90 bg-[#FF0000]" asChild>
-                             <a href={yt.url} target="_blank" rel="noopener noreferrer">
-                                <Youtube className="mr-3 h-5 w-5" />
-                                <span>{yt.name}</span>
-                             </a>
-                           </Button>
-                         ))}
-                       </div>
+                      <DialogHeader>
+                        <DialogTitle className="font-headline text-2xl flex items-center gap-2">
+                          <Youtube className="text-accent" />
+                          Our YouTube Channels
+                        </DialogTitle>
+                        <DialogDescription>
+                          We have two channels! Check them both out.
+                        </DialogDescription>
+                      </DialogHeader>
+                      <div className="flex flex-col space-y-3 pt-4">
+                        {youtubeLinks.map(yt => (
+                          <Button key={yt.name} className="justify-start text-white hover:opacity-90 bg-[#FF0000]" asChild>
+                            <a href={yt.url} target="_blank" rel="noopener noreferrer">
+                              <Youtube className="mr-3 h-5 w-5" />
+                              <span>{yt.name}</span>
+                            </a>
+                          </Button>
+                        ))}
+                      </div>
                     </DialogContent>
                   </Dialog>
                 </div>
@@ -137,9 +137,9 @@ export default function Header() {
         <SheetContent side="right" className="w-[280px] sm:w-[320px] p-0">
           <SheetHeader className="p-4 border-b">
             <div className="flex items-center justify-between">
-                <Link href="/" className="flex items-center gap-2" onClick={() => setIsMenuOpen(false)}>
-                    <Image src="https://storage.googleapis.com/project-os-prod/images/b1b18128-55a0-47b2-9d33-ea84a0d9b4b0.png" alt="FFID VERCEL Logo" width={140} height={40} className="h-10 w-auto" />
-                </Link>
+              <Link href="/" className="flex items-center gap-2" onClick={() => setIsMenuOpen(false)}>
+                <Image src="/logo.png" alt="FFID VERCEL Logo" width={48} height={48} className="h-12 w-12 rounded-full object-cover border-2 border-primary/20" />
+              </Link>
               <SheetClose asChild>
                 <Button variant="ghost" size="icon">
                   <X className="h-5 w-5" />
@@ -152,79 +152,79 @@ export default function Header() {
             <nav className="flex flex-col gap-1">
               {navLinks.map((link, index) => (
                 <div key={link.href}>
-                    <SheetClose asChild>
+                  <SheetClose asChild>
                     <Link
                       href={link.href}
                       className="flex items-center gap-3 py-3 text-lg font-medium"
                     >
-                      <link.icon className="h-5 w-5 text-accent"/>
+                      <link.icon className="h-5 w-5 text-accent" />
                       {link.label}
                     </Link>
                   </SheetClose>
                   {index < navLinks.length - 1 && <Separator />}
                 </div>
               ))}
-               <div key="follow-us">
-                    <Dialog>
+              <div key="follow-us">
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <button
+                      className="flex items-center gap-3 py-3 text-lg font-medium w-full"
+                    >
+                      <Users className="h-5 w-5 text-accent" />
+                      Follow Us
+                    </button>
+                  </DialogTrigger>
+                  <DialogContent className="sm:max-w-md">
+                    <DialogHeader>
+                      <DialogTitle className="font-headline text-2xl flex items-center gap-2">
+                        <Users className="text-accent" />
+                        Follow Our Socials
+                      </DialogTitle>
+                      <DialogDescription>
+                        Stay updated with the latest accounts, news, and community events.
+                      </DialogDescription>
+                    </DialogHeader>
+                    <div className="flex flex-col space-y-3 pt-4">
+                      {socialLinks.map(social => (
+                        <Button key={social.name} className={`justify-start text-white hover:opacity-90 ${social.color}`} asChild>
+                          <a href={social.url} target="_blank" rel="noopener noreferrer">
+                            <social.icon className="mr-3 h-5 w-5" />
+                            <span>Follow us on {social.name}</span>
+                          </a>
+                        </Button>
+                      ))}
+                      <Dialog>
                         <DialogTrigger asChild>
-                             <button
-                                className="flex items-center gap-3 py-3 text-lg font-medium w-full"
-                              >
-                                <Users className="h-5 w-5 text-accent"/>
-                                Follow Us
-                              </button>
+                          <Button className="justify-start text-white hover:opacity-90 bg-[#FF0000]">
+                            <Youtube className="mr-3 h-5 w-5" />
+                            <span>Follow us on YouTube</span>
+                          </Button>
                         </DialogTrigger>
-                        <DialogContent className="sm:max-w-md">
-                            <DialogHeader>
+                        <DialogContent className="sm:max-w-sm">
+                          <DialogHeader>
                             <DialogTitle className="font-headline text-2xl flex items-center gap-2">
-                                <Users className="text-accent" />
-                                Follow Our Socials
+                              <Youtube className="text-accent" />
+                              Our YouTube Channels
                             </DialogTitle>
                             <DialogDescription>
-                                Stay updated with the latest accounts, news, and community events.
+                              We have two channels! Check them both out.
                             </DialogDescription>
-                            </DialogHeader>
-                            <div className="flex flex-col space-y-3 pt-4">
-                            {socialLinks.map(social => (
-                                <Button key={social.name} className={`justify-start text-white hover:opacity-90 ${social.color}`} asChild>
-                                    <a href={social.url} target="_blank" rel="noopener noreferrer">
-                                    <social.icon className="mr-3 h-5 w-5" />
-                                    <span>Follow us on {social.name}</span>
-                                    </a>
-                                </Button>
+                          </DialogHeader>
+                          <div className="flex flex-col space-y-3 pt-4">
+                            {youtubeLinks.map(yt => (
+                              <Button key={yt.name} className="justify-start text-white hover:opacity-90 bg-[#FF0000]" asChild>
+                                <a href={yt.url} target="_blank" rel="noopener noreferrer">
+                                  <Youtube className="mr-3 h-5 w-5" />
+                                  <span>{yt.name}</span>
+                                </a>
+                              </Button>
                             ))}
-                            <Dialog>
-                                <DialogTrigger asChild>
-                                <Button className="justify-start text-white hover:opacity-90 bg-[#FF0000]">
-                                    <Youtube className="mr-3 h-5 w-5" />
-                                    <span>Follow us on YouTube</span>
-                                </Button>
-                                </DialogTrigger>
-                                <DialogContent className="sm:max-w-sm">
-                                <DialogHeader>
-                                    <DialogTitle className="font-headline text-2xl flex items-center gap-2">
-                                    <Youtube className="text-accent" />
-                                    Our YouTube Channels
-                                    </DialogTitle>
-                                    <DialogDescription>
-                                    We have two channels! Check them both out.
-                                    </DialogDescription>
-                                </DialogHeader>
-                                <div className="flex flex-col space-y-3 pt-4">
-                                    {youtubeLinks.map(yt => (
-                                    <Button key={yt.name} className="justify-start text-white hover:opacity-90 bg-[#FF0000]" asChild>
-                                        <a href={yt.url} target="_blank" rel="noopener noreferrer">
-                                        <Youtube className="mr-3 h-5 w-5" />
-                                        <span>{yt.name}</span>
-                                        </a>
-                                    </Button>
-                                    ))}
-                                </div>
-                                </DialogContent>
-                            </Dialog>
-                            </div>
+                          </div>
                         </DialogContent>
-                    </Dialog>
+                      </Dialog>
+                    </div>
+                  </DialogContent>
+                </Dialog>
               </div>
             </nav>
           </div>

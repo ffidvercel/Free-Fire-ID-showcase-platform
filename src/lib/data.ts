@@ -17,152 +17,67 @@ export type GameID = {
   isVerified?: boolean;
   hasInstantTransfer?: boolean;
   isPrivateAndSecure?: boolean;
+  video?: string;
 };
 
 const gameIds: GameID[] = [
   {
-    id: "ff-max-pro-01",
-    title: "Cobra MP40 Beast",
-    price: 3750,
-    level: 72,
-    elitePasses: 15,
-    likes: 12000,
-    mainImage: "ff-1",
-    gallery: ["ff-1-gallery-1", "ff-1-gallery-2", "ff-1-gallery-3"],
-    description: "Maxed out account with the legendary Cobra MP40 and many rare bundles. Includes all elite passes since season 10. Perfect for a serious player looking to dominate.",
-    contact: {
-      whatsapp: "+1234567890",
-      instagram: "ffidsellerpro"
-    },
-    features: ["Cobra MP40", "Titan Scar", "All Elite Passes (10+)", "15+ Rare Bundles", "High Like Count"],
-    isVerified: true,
-    hasInstantTransfer: true,
-    isPrivateAndSecure: true,
-  },
-  {
-    id: "pubg-glacier-m4-02",
-    title: "Glacier M416 King",
-    price: 6000,
-    level: 78,
-    elitePasses: 20,
-    likes: 25000,
-    mainImage: "pubg-1",
-    gallery: ["pubg-1-gallery-1", "pubg-1-gallery-2", "pubg-1-gallery-3"],
-    description: "The ultimate PUBG account featuring a level 7 (max) Glacier M416 skin. Comes with multiple mythic outfits and vehicle skins. A true collector's item.",
-    contact: {
-      whatsapp: "+1234567890",
-      instagram: "ffidsellerpro"
-    },
-    features: ["Glacier M416 (Max)", "Pharaoh X-Suit", "Godzilla AWM", "McLaren & Tesla Skins"],
-    isVerified: true,
-    isPrivateAndSecure: true,
-  },
-  {
-    id: "ff-sakura-vet-03",
-    title: "OG Sakura Veteran",
-    price: 9000,
-    level: 68,
-    elitePasses: 5,
-    likes: 8500,
-    mainImage: "ff-2",
-    gallery: ["ff-2-gallery-1", "ff-2-gallery-2", "ff-2-gallery-3"],
-    description: "Extremely rare original Sakura bundle account from Season 1. A piece of Free Fire history. Only for true collectors who appreciate the value of OG items.",
-    contact: {
-      whatsapp: "+1234567890",
-      instagram: "ffidsellerpro"
-    },
-    features: ["Season 1 Sakura Bundle", "Season 2 Hip Hop Bundle", "Blue Dino Bundle", "Angel Wings Backpack"],
-    isVerified: true,
-    isPrivateAndSecure: true,
-  },
-  {
-    id: "pubg-conqueror-04",
-    title: "Multi-Season Conqueror",
-    price: 4800,
-    level: 75,
-    elitePasses: 18,
-    likes: 18000,
-    mainImage: "pubg-2",
-    gallery: ["pubg-2-gallery-1", "pubg-2-gallery-2", "pubg-2-gallery-3"],
-    description: "This account has achieved Conqueror tier in 5 different seasons. Includes all conqueror frames and titles. Perfect for players who value rank and prestige.",
-    contact: {
-      whatsapp: "+1234567890",
-      instagram: "ffidsellerpro"
-    },
-    features: ["5x Conqueror Frames", "High KD Ratio", "Rare Emotes", "Full RP every season"],
-    isVerified: true,
-    hasInstantTransfer: true,
-  },
-   {
-    id: "ff-starter-pack-05",
-    title: "Pro Starter Pack",
-    price: 1200,
-    level: 60,
-    elitePasses: 4,
-    likes: 3000,
-    mainImage: "ff-3",
-    gallery: ["ff-3-gallery-1", "ff-3-gallery-2", "ff-3-gallery-3"],
-    description: "A solid starter account with several good gun skins and character bundles. Great value for anyone starting out or needing a reliable secondary account.",
-    contact: {
-      whatsapp: "+1234567890",
-      instagram: "ffidsellerpro"
-    },
-    features: ["AK47 - Blue Flame Draco", "Chrono Character", "4+ Gun Evo Skins", "Good starting stats"],
-    hasInstantTransfer: true,
-    isPrivateAndSecure: true,
-  },
-  {
-    id: "pubg-mythic-hoard-06",
-    title: "Mythic Fashion Hoard",
-    price: 8250,
-    level: 80,
-    elitePasses: 25,
-    likes: 35000,
-    mainImage: "pubg-3",
-    gallery: ["pubg-3-gallery-1", "pubg-3-gallery-2", "pubg-3-gallery-3"],
-    description: "An account for fashion lovers, with over 30 mythic outfits and countless legendary items. Has a massive inventory that will turn heads in every lobby.",
-    contact: {
-      whatsapp: "+1234567890",
-      instagram: "ffidsellerpro"
-    },
-    features: ["30+ Mythic Outfits", "The Fool - M416", "Blood Raven X-Suit", "Huge Inventory"],
-    isVerified: true,
-  },
-  {
-    id: "ff-budget-beast-07",
-    title: "Budget Beast",
-    price: 750,
-    level: 55,
-    elitePasses: 2,
-    likes: 1500,
-    mainImage: "ff-4",
-    gallery: ["ff-4-gallery-1", "ff-4-gallery-2", "ff-4-gallery-3"],
-    description: "A cheap but powerful account. Has a few key gun skins and a solid character selection. Perfect for players on a budget who still want a competitive edge.",
-    contact: {
-      whatsapp: "+1234567890",
-      instagram: "ffidsellerpro"
-    },
-    features: ["Decent Gun Skins", "Alok & K Characters", "Great Value"],
-    isPrivateAndSecure: true,
-  },
-  {
-    id: "pubg-vehicle-skin-08",
-    title: "Vehicle Skin Garage",
-    price: 2250,
-    level: 65,
+    id: "old-id-rare-collection-01",
+    title: "OLD ID - Rare Collection",
+    price: 5000,
+    level: 64,
     elitePasses: 10,
-    likes: 9000,
-    mainImage: "pubg-4",
-    gallery: ["pubg-4-gallery-1", "pubg-4-gallery-2", "pubg-4-gallery-3"],
-    description: "This account boasts a huge collection of rare vehicle skins, including the limited edition UAZ and Dacia skins. Drive in style and show off to your teammates.",
+    likes: 6000,
+    mainImage: "id1-main",
+    gallery: ["id1-1", "id1-2", "id1-3", "id1-4"],
+    description: "An OLD ID with a RARE COLLECTION of gun skins. Features the iconic Red Poker and many Evolution skins. A must-have for collectors who appreciate OG items and rare aesthetics.",
     contact: {
       whatsapp: "+1234567890",
-      instagram: "ffidsellerpro"
+      instagram: "ffidvercel"
     },
-    features: ["Multiple McLaren Skins", "Aegis UAZ (Lvl 7)", "Rare Motorcycle Skins", "Full Garage"],
+    features: ["Red Poker", "Many Evo Skins", "Rare Gun Skins", "6000+ Likes", "OLD ID"],
     isVerified: true,
     hasInstantTransfer: true,
     isPrivateAndSecure: true,
+    video: "https://www.youtube.com/watch?v=d-ezNsni31w",
+  },
+  {
+    id: "old-id-rare-collection-02",
+    title: "OLD ID - Evo Master",
+    price: 5000,
+    level: 63,
+    elitePasses: 8,
+    likes: 5000,
+    mainImage: "id2-main",
+    gallery: ["id2-1", "id2-2", "id2-3", "id2-4", "id2-5", "id2-6", "id2-7", "id2-8", "id2-9", "id2-10", "id2-11", "id2-12", "id2-13", "id2-14", "id2-15", "id2-16"],
+    description: "Another OLD ID with a RARE COLLECTION. This account boasts 3/3+ Evolution skins and rare gun skins. Perfect for players who want a head start with premium items.",
+    contact: {
+      whatsapp: "+1234567890",
+      instagram: "ffidvercel"
+    },
+    features: ["3/3+ Evo Skins", "Rare Gun Skins", "Rare Collection", "5000+ Likes", "OLD ID"],
+    isVerified: true,
+    isPrivateAndSecure: true,
+  },
+  {
+    id: "awm-lovers-paradise-03",
+    title: "AWM Lover's Paradise",
+    price: 2500,
+    level: 66,
+    elitePasses: 12,
+    likes: 9500,
+    mainImage: "id3-main",
+    gallery: ["id3-1", "id3-2", "id3-3", "id3-4", "id3-5", "id3-6", "id3-7", "id3-8", "id3-9", "id3-10", "id3-11", "id3-12", "id3-13", "id3-14", "id3-15", "id3-16", "id3-17", "id3-18"],
+    description: "For AWM lovers! This account features the rare AWM Gamer's Skin, all incubator items including top incubator, the legendary Fist skin, and the Street Fighter Bundle. An absolute steal at this price.",
+    contact: {
+      whatsapp: "+1234567890",
+      instagram: "ffidvercel"
+    },
+    features: ["AWM Rare Gamer's Skin", "All Incubator Items", "Top Incubator", "Fist Skin", "Street Fighter Bundle", "9500+ Likes"],
+    isVerified: true,
+    hasInstantTransfer: true,
+    isPrivateAndSecure: true,
+    video: "https://www.youtube.com/watch?v=i1GFdyH6Iu4",
   },
 ];
 

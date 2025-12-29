@@ -1,35 +1,72 @@
 import type { Metadata } from 'next';
+import { Inter, Space_Grotesk } from 'next/font/google';
 import './globals.css';
 import { cn } from '@/lib/utils';
 import { Toaster } from '@/components/ui/toaster';
 import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
+import ClientLayout from '@/components/layout/client-layout';
+
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
+const spaceGrotesk = Space_Grotesk({
+  subsets: ['latin'],
+  variable: '--font-space-grotesk',
+});
 
 export const metadata: Metadata = {
-  title: 'FFID VERCEL - Buy and Sell Game IDs',
+  title: {
+    default: 'FFID VERCEL - Buy and Sell Game IDs',
+    template: '%s | FFID VERCEL',
+  },
   description:
-    'A marketplace to buy, sell, and trade Free Fire, PUBG, and other game IDs.',
+    'The best marketplace to buy, sell, and trade Free Fire, PUBG, and other exclusive game IDs securely.',
+  keywords: ['Free Fire IDs', 'PUBG IDs', 'Game Accounts', 'Buy Game IDs', 'Sell Game IDs', 'FFID VERCEL'],
+  authors: [{ name: 'FFID VERCEL Team' }],
+  creator: 'FFID VERCEL',
+  publisher: 'FFID VERCEL',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL('https://ffid-vercel.app'),
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     title: 'FFID VERCEL - Buy and Sell Game IDs',
     description: 'The best place to find, buy, and sell exclusive game accounts securely.',
     images: [
       {
-        url: 'https://storage.googleapis.com/project-os-prod/images/b1b18128-55a0-47b2-9d33-ea84a0d9b4b0.png',
+        url: '/banner.png',
         width: 1200,
         height: 630,
         alt: 'FFID VERCEL Logo',
       },
     ],
     type: 'website',
-    url: 'https://ffid-vercel.app', // Replace with your actual domain
+    url: 'https://ffid-vercel.app',
+    siteName: 'FFID VERCEL',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'FFID VERCEL - Buy and Sell Game IDs',
     description: 'The best place to find, buy, and sell exclusive game accounts securely.',
-    images: ['https://storage.googleapis.com/project-os-prod/images/b1b18128-55a0-47b2-9d33-ea84a0d9b4b0.png'],
+    images: ['/banner.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 };
+
 
 export default function RootLayout({
   children,
@@ -38,29 +75,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@400;700&display=swap"
-          rel="stylesheet"
-        />
-      </head>
       <body
         className={cn(
           'min-h-screen bg-background font-body antialiased flex flex-col',
+          inter.variable,
+          spaceGrotesk.variable,
           'dark'
         )}
       >
-        <div className="flex flex-col min-h-screen">
+        <ClientLayout>
+          <div className="flex flex-col min-h-screen">
             <Header />
             <main className="flex-grow">{children}</main>
             <Footer />
-        </div>
+          </div>
+        </ClientLayout>
         <Toaster />
       </body>
     </html>

@@ -5,14 +5,14 @@ import type { Metadata, ResolvingMetadata } from 'next';
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 
 type Props = {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 };
 
 export async function generateMetadata(
   { params }: Props,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
-  const id = params.id;
+  const { id } = await params;
   const gameId = getGameId(id);
 
   if (!gameId) {
@@ -20,7 +20,7 @@ export async function generateMetadata(
       title: 'ID Not Found',
     };
   }
-  
+
   const mainImage = PlaceHolderImages.find(img => img.id === gameId.mainImage);
 
   // The `images` array in openGraph should be the specific image for this ID.
@@ -36,28 +36,53 @@ export async function generateMetadata(
       images: ogImages,
     },
     twitter: {
-        card: 'summary_large_image',
-        title: `${gameId.title} | FFID VERCEL`,
-        description: gameId.description,
-        images: ogImages,
+      card: 'summary_large_image',
+      title: `${gameId.title} | FFID VERCEL`,
+      description: gameId.description,
+      images: ogImages,
     }
   };
 }
 
 export async function generateStaticParams() {
   const gameIds = getGameIds();
- 
+
   return gameIds.map((id) => ({
     id: id.id,
   }))
 }
 
-export default function IdDetailPage({ params }: Props) {
-  const gameId = getGameId(params.id);
+export default async function IdDetailPage({ params }: Props) {
+  const { id } = await params;
+  const gameId = getGameId(id);
 
   if (!gameId) {
     notFound();
   }
 
-  return <IdDetailClient gameId={gameId} />;
+  const mainImage = PlaceHolderImages.find(img => img.id === gameId.mainImage);
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: gameId.title,
+    image: mainImage ? mainImage.imageUrl : undefined,
+    description: gameId.description,
+    offers: {
+      '@type': 'Offer',
+      priceCurrency: 'INR',
+      price: gameId.price,
+      availability: 'https://schema.org/InStock',
+    },
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <IdDetailClient gameId={gameId} />
+    </>
+  );
 }

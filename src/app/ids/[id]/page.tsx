@@ -20,10 +20,12 @@ export async function generateMetadata(
       title: 'ID Not Found',
     };
   }
-
+  
   const mainImage = PlaceHolderImages.find(img => img.id === gameId.mainImage);
 
-  const previousImages = (await parent).openGraph?.images || [];
+  // The `images` array in openGraph should be the specific image for this ID.
+  // We can also include parent images, but the most specific one should be first.
+  const ogImages = mainImage ? [mainImage.imageUrl] : [];
 
   return {
     title: `${gameId.title} | FFID VERCEL`,
@@ -31,13 +33,13 @@ export async function generateMetadata(
     openGraph: {
       title: `${gameId.title} | FFID VERCEL`,
       description: gameId.description,
-      images: mainImage ? [mainImage.imageUrl, ...previousImages] : [...previousImages],
+      images: ogImages,
     },
     twitter: {
         card: 'summary_large_image',
         title: `${gameId.title} | FFID VERCEL`,
         description: gameId.description,
-        images: mainImage ? [mainImage.imageUrl] : [],
+        images: ogImages,
     }
   };
 }

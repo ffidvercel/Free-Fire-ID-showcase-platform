@@ -33,21 +33,32 @@ const WhatsAppIcon = (props: React.SVGProps<SVGSVGElement>) => (
 export default function IdDetailClient({ gameId }: Props) {
   const { toast } = useToast();
   
-  const handleShare = () => {
-    const url = window.location.href;
-    navigator.clipboard.writeText(url).then(() => {
-      toast({
-        title: "Link Copied!",
-        description: "The link to this page has been copied to your clipboard.",
-      });
-    }).catch(err => {
-      console.error('Failed to copy: ', err);
+  const handleShare = async () => {
+    const shareData = {
+      title: gameId.title,
+      text: gameId.description,
+      url: window.location.href,
+    };
+    try {
+      // Use Web Share API if available
+      if (navigator.share) {
+        await navigator.share(shareData);
+      } else {
+        // Fallback to clipboard
+        await navigator.clipboard.writeText(window.location.href);
+        toast({
+          title: "Link Copied!",
+          description: "The link to this page has been copied to your clipboard.",
+        });
+      }
+    } catch (err) {
+      console.error('Failed to share: ', err);
       toast({
         variant: "destructive",
         title: "Oops!",
-        description: "Could not copy the link.",
+        description: "Could not share or copy the link.",
       });
-    });
+    }
   };
 
   const galleryImages = gameId.gallery

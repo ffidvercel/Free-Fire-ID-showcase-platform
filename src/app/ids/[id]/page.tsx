@@ -25,7 +25,12 @@ export async function generateMetadata(
 
   // The `images` array in openGraph should be the specific image for this ID.
   // We can also include parent images, but the most specific one should be first.
-  const ogImages = mainImage ? [mainImage.imageUrl] : [];
+  const ogImages = mainImage ? [{
+    url: mainImage.imageUrl,
+    width: 1200,
+    height: 630,
+    alt: gameId.title,
+  }] : [];
 
   return {
     title: `${gameId.title} | FFID VERCEL`,

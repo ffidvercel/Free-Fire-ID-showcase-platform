@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://ffid-vercel.app'),
+  metadataBase: new URL('https://freefireid.vercel.app'),
   alternates: {
     canonical: '/',
   },
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
       },
     ],
     type: 'website',
-    url: 'https://ffid-vercel.app',
+    url: 'https://freefireid.vercel.app',
     siteName: 'FFID VERCEL',
   },
   twitter: {

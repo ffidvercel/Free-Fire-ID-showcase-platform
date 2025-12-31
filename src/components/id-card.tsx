@@ -41,10 +41,10 @@ export default function IdCard({ gameId, priority = false }: IdCardProps) {
         </CardHeader>
         <CardContent className="flex-grow p-4 pb-2">
           <h3 className="font-headline text-lg font-semibold truncate text-primary">{gameId.title}</h3>
-          <p className="text-2xl font-bold text-accent mt-1">₹{gameId.price.toLocaleString()}</p>
+          <p className="text-2xl font-bold text-accent mt-1">₹{gameId.price.toLocaleString('en-IN')}</p>
         </CardContent>
         <CardFooter className="p-4 pt-0 flex-col items-start gap-3">
-          <div className="space-y-1.5 text-xs text-muted-foreground w-full h-[60px]">
+          <div className="space-y-1.5 text-xs text-muted-foreground w-full min-h-[60px]">
             {gameId.isVerified && <div className="flex items-center gap-1.5">
               <ShieldCheck className="w-3.5 h-3.5 text-green-500" />
               <span>Verified account</span>

@@ -65,6 +65,9 @@ export default function IdDetailClient({ gameId }: Props) {
     .map((id) => PlaceHolderImages.find((img) => img.id === id))
     .filter(Boolean);
 
+  const whatsappMessage = `Hi, I'm interested in your account "${gameId.title}" listed for ₹${gameId.price.toLocaleString('en-IN')} on the website. Is it still available?`;
+  const whatsappUrl = `https://wa.me/${gameId.contact.whatsapp}?text=${encodeURIComponent(whatsappMessage)}`;
+
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="grid lg:grid-cols-5 gap-8 lg:gap-12">
@@ -133,7 +136,7 @@ export default function IdDetailClient({ gameId }: Props) {
                 <h1 className="font-headline text-3xl md:text-4xl font-bold text-primary tracking-tight">
                   {gameId.title}
                 </h1>
-                <p className="text-3xl md:text-4xl font-bold text-accent mt-2">₹{gameId.price.toLocaleString()}</p>
+                <p className="text-3xl md:text-4xl font-bold text-accent mt-2">₹{gameId.price.toLocaleString('en-IN')}</p>
               </div>
               <Button variant="outline" size="icon" onClick={handleShare} aria-label="Share">
                 <Share2 className="h-5 w-5" />
@@ -189,7 +192,7 @@ export default function IdDetailClient({ gameId }: Props) {
               <p className="text-sm text-muted-foreground">To purchase this account, please contact the seller using the links below. All deals are made privately.</p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Button className="flex-1 bg-green-500 hover:bg-green-600 text-white" asChild>
-                  <a href={`https://wa.me/${gameId.contact.whatsapp}`} target="_blank" rel="noopener noreferrer">
+                  <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
                     <WhatsAppIcon className="mr-2" /> WhatsApp
                   </a>
                 </Button>

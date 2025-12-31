@@ -60,6 +60,9 @@ export default function Footer() {
           </Dialog>
         </div>
         <p>&copy; {new Date().getFullYear()} FFID VERCEL. All Rights Reserved.</p>
+        <p className="mt-2 text-sm">
+          Made with ❤️ in India
+        </p>
         <p className="mt-2 text-xs opacity-70">
           This platform is an independent project and is not affiliated with Garena, Krafton, or any other game developer.
         </p>

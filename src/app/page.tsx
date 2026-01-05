@@ -13,7 +13,7 @@ export default function Home() {
           Browse our curated selection of high-quality game accounts. All transactions are handled directly and privately.
         </p>
       </header>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {gameIds.map((id, index) => (
           <IdCard key={id.id} gameId={id} priority={index < 4} />
         ))}

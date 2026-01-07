@@ -1,10 +1,15 @@
+"use client";
+
 import { getGameIds } from "@/lib/data";
 import IdCard from "@/components/id-card";
+import WelcomeModal from "@/components/welcome-modal";
+
 export default function Home() {
   const gameIds = getGameIds();
 
   return (
     <div className="container mx-auto px-4 py-8">
+      <WelcomeModal />
       <header className="text-center mb-12">
         <h1 className="text-4xl md:text-5xl font-headline font-bold text-primary tracking-tighter">
           Find Your Perfect Game ID

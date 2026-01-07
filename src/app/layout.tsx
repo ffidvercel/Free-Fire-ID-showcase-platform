@@ -5,8 +5,6 @@ import { cn } from '@/lib/utils';
 import { Toaster } from '@/components/ui/toaster';
 import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
-import ClientLayout from '@/components/layout/client-layout';
-
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -83,13 +81,11 @@ export default function RootLayout({
           'dark'
         )}
       >
-        <ClientLayout>
-          <div className="flex flex-col min-h-screen">
-            <Header />
-            <main className="flex-grow">{children}</main>
-            <Footer />
-          </div>
-        </ClientLayout>
+        <div className="flex flex-col min-h-screen">
+          <Header />
+          <main className="flex-grow">{children}</main>
+          <Footer />
+        </div>
         <Toaster />
       </body>
     </html>

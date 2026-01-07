@@ -133,7 +133,7 @@ export default function IdDetailClient({ gameId }: Props) {
                 <h1 className="font-headline text-3xl md:text-4xl font-bold text-primary tracking-tight">
                   {gameId.title}
                 </h1>
-                <p className="text-3xl md:text-4xl font-bold text-accent mt-2">₹{gameId.price.toLocaleString()}</p>
+                <p className="text-3xl md:text-4xl font-bold text-accent mt-2">₹{gameId.price.toLocaleString('en-IN')}</p>
               </div>
               <Button variant="outline" size="icon" onClick={handleShare} aria-label="Share">
                 <Share2 className="h-5 w-5" />
@@ -149,7 +149,7 @@ export default function IdDetailClient({ gameId }: Props) {
             </div>
             <div className="bg-card border p-4 rounded-lg">
               <ThumbsUp className="mx-auto h-6 w-6 text-blue-500" />
-              <p className="text-lg font-semibold mt-1">{gameId.likes.toLocaleString()}</p>
+              <p className="text-lg font-semibold mt-1">{gameId.likes.toLocaleString('en-IN')}</p>
               <p className="text-sm text-muted-foreground">Likes</p>
             </div>
             <div className="bg-card border p-4 rounded-lg">

@@ -32,7 +32,7 @@ const gameIds: GameID[] = [
     gallery: ["id1-1", "id1-2", "id1-3", "id1-4"],
     description: "An OLD ID with a RARE COLLECTION of gun skins. Features the iconic Red Poker and many Evolution skins. A must-have for collectors who appreciate OG items and rare aesthetics.",
     contact: {
-      whatsapp: "+1234567890",
+      whatsapp: "+919876543210",
       instagram: "ffidvercel"
     },
     features: ["Red Poker", "Many Evo Skins", "Rare Gun Skins", "6000+ Likes", "OLD ID"],

@@ -1,4 +1,6 @@
 
+'use client';
+
 import Link from "next/link";
 import Image from "next/image";
 import { GameID } from "@/lib/data";
@@ -9,7 +11,8 @@ import {
   CardFooter,
   CardHeader,
 } from "@/components/ui/card";
-import { ArrowRight, Star, ShieldCheck, Zap, Lock } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { ArrowRight, Star, ShieldCheck, Zap, Lock, ShoppingCart } from "lucide-react";
 
 interface IdCardProps {
   gameId: GameID;
@@ -18,6 +21,13 @@ interface IdCardProps {
 
 export default function IdCard({ gameId, priority = false }: IdCardProps) {
   const mainImage = PlaceHolderImages.find(img => img.id === gameId.mainImage);
+
+  const handleBuyNowClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    e.stopPropagation();
+    const message = `Hi, I'm interested in buying the "${gameId.title}" (ID: ${gameId.id}). Price: ₹${gameId.price.toLocaleString('en-IN')}. Is it still available?`;
+    window.open(`https://wa.me/${gameId.contact.whatsapp}?text=${encodeURIComponent(message)}`, '_blank');
+  };
 
   return (
     <Link href={`/ids/${gameId.id}`} className="block transition-all duration-300 hover:shadow-lg hover:-translate-y-1 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 group">
@@ -41,9 +51,9 @@ export default function IdCard({ gameId, priority = false }: IdCardProps) {
         </CardHeader>
         <CardContent className="flex-grow p-4 pb-2">
           <h3 className="font-headline text-lg font-semibold truncate text-primary">{gameId.title}</h3>
-          <p className="text-2xl font-bold text-accent mt-1">₹{gameId.price.toLocaleString()}</p>
+          <p className="text-2xl font-bold text-accent mt-1">₹{gameId.price.toLocaleString('en-IN')}</p>
         </CardContent>
-        <CardFooter className="p-4 pt-0 flex-col items-start gap-3">
+        <CardFooter className="p-4 pt-2 flex-col items-start gap-3">
           <div className="space-y-1.5 text-xs text-muted-foreground w-full h-[60px]">
             {gameId.isVerified && <div className="flex items-center gap-1.5">
               <ShieldCheck className="w-3.5 h-3.5 text-green-500" />
@@ -58,9 +68,17 @@ export default function IdCard({ gameId, priority = false }: IdCardProps) {
               <span>Private & secure</span>
             </div>}
           </div>
-          <div className="w-full text-sm font-medium text-accent inline-flex items-center justify-center group-hover:underline">
-            View Details
-            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+          <div className="grid grid-cols-2 gap-3 w-full mt-2">
+            <Button variant="outline" className="w-full" asChild>
+              <Link href={`/ids/${gameId.id}`}>
+                View Details
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+            <Button className="w-full" onClick={handleBuyNowClick}>
+              <ShoppingCart className="mr-2 h-4 w-4" />
+              Buy Now
+            </Button>
           </div>
         </CardFooter>
       </Card>

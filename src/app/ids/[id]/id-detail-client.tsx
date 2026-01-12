@@ -16,6 +16,8 @@ import { Button } from "@/components/ui/button";
 import { Star, ThumbsUp, Crown, CheckCircle, Gamepad2, AlertTriangle, Share2 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
+import { siteConfig } from "@/lib/config";
+import { formatCurrency } from "@/lib/utils";
 
 type Props = {
   gameId: GameID;
@@ -133,7 +135,7 @@ export default function IdDetailClient({ gameId }: Props) {
                 <h1 className="font-headline text-3xl md:text-4xl font-bold text-primary tracking-tight">
                   {gameId.title}
                 </h1>
-                <p className="text-3xl md:text-4xl font-bold text-accent mt-2">₹{gameId.price.toLocaleString()}</p>
+                <p className="text-3xl md:text-4xl font-bold text-accent mt-2">{formatCurrency(gameId.price)}</p>
               </div>
               <Button variant="outline" size="icon" onClick={handleShare} aria-label="Share">
                 <Share2 className="h-5 w-5" />
@@ -189,12 +191,12 @@ export default function IdDetailClient({ gameId }: Props) {
               <p className="text-sm text-muted-foreground">To purchase this account, please contact the seller using the links below. All deals are made privately.</p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Button className="flex-1 bg-green-500 hover:bg-green-600 text-white" asChild>
-                  <a href={`https://wa.me/${gameId.contact.whatsapp}`} target="_blank" rel="noopener noreferrer">
+                  <a href={`https://wa.me/${siteConfig.seller.whatsapp}`} target="_blank" rel="noopener noreferrer">
                     <WhatsAppIcon className="mr-2" /> WhatsApp
                   </a>
                 </Button>
                 <Button className="flex-1 bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:opacity-90" asChild>
-                  <a href={`https://instagram.com/${gameId.contact.instagram}`} target="_blank" rel="noopener noreferrer">
+                  <a href={`https://instagram.com/${siteConfig.seller.instagram}`} target="_blank" rel="noopener noreferrer">
                     <InstagramIcon className="mr-2" /> Instagram
                   </a>
                 </Button>

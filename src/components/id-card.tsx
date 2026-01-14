@@ -1,6 +1,6 @@
 
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 import { GameID } from "@/lib/data";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import {
@@ -9,7 +9,9 @@ import {
   CardFooter,
   CardHeader,
 } from "@/components/ui/card";
-import { ArrowRight, Star, ShieldCheck, Zap, Lock } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { ArrowRight, Star, ShieldCheck, Zap, Lock, ShoppingBag } from "lucide-react";
+import { formatPrice } from "@/lib/utils";
 
 interface IdCardProps {
   gameId: GameID;
@@ -18,11 +20,12 @@ interface IdCardProps {
 
 export default function IdCard({ gameId, priority = false }: IdCardProps) {
   const mainImage = PlaceHolderImages.find(img => img.id === gameId.mainImage);
+  const whatsappMessage = `I'm interested in the "${gameId.title}" ID (Price: ${formatPrice(gameId.price)}). Can you please provide more details?`;
 
   return (
-    <Link href={`/ids/${gameId.id}`} className="block transition-all duration-300 hover:shadow-lg hover:-translate-y-1 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 group">
-      <Card className="flex flex-col overflow-hidden h-full">
-        <CardHeader className="p-0">
+    <Card className="flex flex-col overflow-hidden h-full transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+      <CardHeader className="p-0">
+        <Link href={`/ids/${gameId.id}`} className="block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-t-lg">
           <div className="relative aspect-[4/3] w-full">
             {mainImage && (
               <Image
@@ -38,32 +41,49 @@ export default function IdCard({ gameId, priority = false }: IdCardProps) {
               <span>Lv. {gameId.level}</span>
             </div>
           </div>
-        </CardHeader>
-        <CardContent className="flex-grow p-4 pb-2">
-          <h3 className="font-headline text-lg font-semibold truncate text-primary">{gameId.title}</h3>
-          <p className="text-2xl font-bold text-accent mt-1">₹{gameId.price.toLocaleString()}</p>
-        </CardContent>
-        <CardFooter className="p-4 pt-0 flex-col items-start gap-3">
-          <div className="space-y-1.5 text-xs text-muted-foreground w-full h-[60px]">
-            {gameId.isVerified && <div className="flex items-center gap-1.5">
-              <ShieldCheck className="w-3.5 h-3.5 text-green-500" />
-              <span>Verified account</span>
-            </div>}
-            {gameId.hasInstantTransfer && <div className="flex items-center gap-1.5">
-              <Zap className="w-3.5 h-3.5 text-blue-500" />
-              <span>Instant transfer</span>
-            </div>}
-            {gameId.isPrivateAndSecure && <div className="flex items-center gap-1.5">
-              <Lock className="w-3.5 h-3.5 text-gray-500" />
-              <span>Private & secure</span>
-            </div>}
-          </div>
-          <div className="w-full text-sm font-medium text-accent inline-flex items-center justify-center group-hover:underline">
-            View Details
-            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </div>
-        </CardFooter>
-      </Card>
-    </Link>
+        </Link>
+      </CardHeader>
+      <CardContent className="flex-grow p-4 pb-2">
+        <Link href={`/ids/${gameId.id}`}>
+          <h3 className="font-headline text-lg font-semibold truncate text-primary hover:underline">{gameId.title}</h3>
+        </Link>
+        <p className="text-2xl font-bold text-accent mt-1">{formatPrice(gameId.price)}</p>
+      </CardContent>
+      <CardFooter className="p-4 pt-0 flex-col items-start gap-3">
+        <div className="space-y-1.5 text-xs text-muted-foreground w-full h-[60px]">
+          {gameId.isVerified && <div className="flex items-center gap-1.5">
+            <ShieldCheck className="w-3.5 h-3.5 text-green-500" />
+            <span>Verified account</span>
+          </div>}
+          {gameId.hasInstantTransfer && <div className="flex items-center gap-1.5">
+            <Zap className="w-3.5 h-3.5 text-blue-500" />
+            <span>Instant transfer</span>
+          </div>}
+          {gameId.isPrivateAndSecure && <div className="flex items-center gap-1.5">
+            <Lock className="w-3.5 h-3.5 text-gray-500" />
+            <span>Private & secure</span>
+          </div>}
+        </div>
+        <div className="grid grid-cols-2 gap-2 w-full">
+          <Button asChild variant="outline">
+            <Link href={`/ids/${gameId.id}`} className="flex items-center justify-center">
+              Details
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
+          </Button>
+          <Button asChild>
+            <Link
+              href={`https://wa.me/${gameId.contact.whatsapp}?text=${encodeURIComponent(whatsappMessage)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center"
+            >
+              <ShoppingBag className="mr-2 h-4 w-4" />
+              Buy Now
+            </Link>
+          </Button>
+        </div>
+      </CardFooter>
+    </Card>
   );
 }

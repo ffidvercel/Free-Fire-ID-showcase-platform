@@ -41,8 +41,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
     return (
         <>
             <div className={cn(
-                "flex flex-col min-h-screen transition-all duration-700",
-                showModal && "blur-xl scale-[0.98] pointer-events-none select-none h-screen overflow-hidden"
+                "flex flex-col min-h-screen transition-all duration-700"
             )}>
                 {children}
             </div>

@@ -1,0 +1,1 @@
+export const SELLER_WHATSAPP_NUMBER = "+919876543210";

@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { Menu, X, FileText, Shield, Gamepad2, Users, Youtube, Facebook } from 'lucide-react';
+import { Menu, X, FileText, Shield, Gamepad2, Users, Youtube, Facebook, MessageCircle } from 'lucide-react';
 import { Button } from '../ui/button';
 import { useState } from 'react';
 import {
@@ -33,6 +33,7 @@ export default function Header() {
   ];
 
   const socialLinks = [
+    { name: 'WhatsApp', url: 'https://wa.me/919999999999', icon: MessageCircle, color: "bg-[#25D366]" },
     { name: 'Instagram', url: 'https://www.instagram.com/ffidvercel/', icon: InstagramIcon, color: "bg-gradient-to-r from-purple-500 to-pink-500" },
     { name: 'Discord', url: 'https://discord.gg/3XaZYzr3', icon: DiscordIcon, color: "bg-[#5865F2]" },
     { name: 'Facebook', url: 'https://www.facebook.com/profile.php?id=61585687532032&sk=about', icon: Facebook, color: "bg-[#1877F2]" },
@@ -58,68 +59,22 @@ export default function Header() {
                 <Link href={link.href}>{link.label}</Link>
               </Button>
             ))}
-            <Dialog>
-              <DialogTrigger asChild>
-                <Button variant="ghost">
-                  <Users className="mr-2 h-4 w-4" />
-                  Follow Us
-                </Button>
-              </DialogTrigger>
-              <DialogContent className="sm:max-w-md">
-                <DialogHeader>
-                  <DialogTitle className="font-headline text-2xl flex items-center gap-2">
-                    <Users className="text-accent" />
-                    Follow Our Socials
-                  </DialogTitle>
-                  <DialogDescription>
-                    Stay updated with the latest accounts, news, and community events.
-                  </DialogDescription>
-                </DialogHeader>
-                <div className="flex flex-col space-y-3 pt-4">
-                  {socialLinks.map(social => (
-                    <Button key={social.name} className={`justify-start text-white hover:opacity-90 ${social.color}`} asChild>
-                      <a href={social.url} target="_blank" rel="noopener noreferrer">
-                        <social.icon className="mr-3 h-5 w-5" />
-                        <span>Follow us on {social.name}</span>
-                      </a>
-                    </Button>
-                  ))}
-                  <Dialog>
-                    <DialogTrigger asChild>
-                      <Button className="justify-start text-white hover:opacity-90 bg-[#FF0000]">
-                        <Youtube className="mr-3 h-5 w-5" />
-                        <span>Follow us on YouTube</span>
-                      </Button>
-                    </DialogTrigger>
-                    <DialogContent className="sm:max-w-sm">
-                      <DialogHeader>
-                        <DialogTitle className="font-headline text-2xl flex items-center gap-2">
-                          <Youtube className="text-accent" />
-                          Our YouTube Channels
-                        </DialogTitle>
-                        <DialogDescription>
-                          We have two channels! Check them both out.
-                        </DialogDescription>
-                      </DialogHeader>
-                      <div className="flex flex-col space-y-3 pt-4">
-                        {youtubeLinks.map(yt => (
-                          <Button key={yt.name} className="justify-start text-white hover:opacity-90 bg-[#FF0000]" asChild>
-                            <a href={yt.url} target="_blank" rel="noopener noreferrer">
-                              <Youtube className="mr-3 h-5 w-5" />
-                              <span>{yt.name}</span>
-                            </a>
-                          </Button>
-                        ))}
-                      </div>
-                    </DialogContent>
-                  </Dialog>
-                </div>
-              </DialogContent>
-            </Dialog>
+            <Button variant="ghost" asChild>
+              <a href="https://wa.me/919999999999" target="_blank" rel="noopener noreferrer">
+                <MessageCircle className="mr-2 h-4 w-4" />
+                WhatsApp
+              </a>
+            </Button>
           </nav>
 
           {/* Mobile Nav Trigger */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center gap-2">
+            <Button variant="outline" size="sm" asChild className="border-green-500 text-green-500 hover:bg-green-500 hover:text-white">
+              <a href="https://wa.me/919999999999" target="_blank" rel="noopener noreferrer">
+                <MessageCircle className="h-4 w-4" />
+                <span className="sr-only">WhatsApp</span>
+              </a>
+            </Button>
             <Button
               variant="ghost"
               size="icon"

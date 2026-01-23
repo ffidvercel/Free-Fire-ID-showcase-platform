@@ -32,7 +32,7 @@ const gameIds: GameID[] = [
     gallery: ["id1-1", "id1-2", "id1-3", "id1-4"],
     description: "An OLD ID with a RARE COLLECTION of gun skins. Features the iconic Red Poker and many Evolution skins. A must-have for collectors who appreciate OG items and rare aesthetics.",
     contact: {
-      whatsapp: "+1234567890",
+      whatsapp: "+911234567890",
       instagram: "ffidvercel"
     },
     features: ["Red Poker", "Many Evo Skins", "Rare Gun Skins", "6000+ Likes", "OLD ID"],
@@ -52,7 +52,7 @@ const gameIds: GameID[] = [
     gallery: ["id2-1", "id2-2", "id2-3", "id2-4", "id2-5", "id2-6", "id2-7", "id2-8", "id2-9", "id2-10", "id2-11", "id2-12", "id2-13", "id2-14", "id2-15", "id2-16"],
     description: "Another OLD ID with a RARE COLLECTION. This account boasts 3/3+ Evolution skins and rare gun skins. Perfect for players who want a head start with premium items.",
     contact: {
-      whatsapp: "+1234567890",
+      whatsapp: "+911234567890",
       instagram: "ffidvercel"
     },
     features: ["3/3+ Evo Skins", "Rare Gun Skins", "Rare Collection", "5000+ Likes", "OLD ID"],
@@ -70,7 +70,7 @@ const gameIds: GameID[] = [
     gallery: ["id3-1", "id3-2", "id3-3", "id3-4", "id3-5", "id3-6", "id3-7", "id3-8", "id3-9", "id3-10", "id3-11", "id3-12", "id3-13", "id3-14", "id3-15", "id3-16", "id3-17", "id3-18"],
     description: "For AWM lovers! This account features the rare AWM Gamer's Skin, all incubator items including top incubator, the legendary Fist skin, and the Street Fighter Bundle. An absolute steal at this price.",
     contact: {
-      whatsapp: "+1234567890",
+      whatsapp: "+911234567890",
       instagram: "ffidvercel"
     },
     features: ["AWM Rare Gamer's Skin", "All Incubator Items", "Top Incubator", "Fist Skin", "Street Fighter Bundle", "9500+ Likes"],

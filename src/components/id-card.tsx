@@ -1,15 +1,20 @@
 
+'use client';
+
 import Link from "next/link";
 import Image from "next/image";
 import { GameID } from "@/lib/data";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
+import { formatNumber } from "@/lib/format";
 import {
   Card,
   CardContent,
   CardFooter,
   CardHeader,
 } from "@/components/ui/card";
-import { ArrowRight, Star, ShieldCheck, Zap, Lock } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { ArrowRight, Star, ShieldCheck, Zap, Lock, MessageCircle } from "lucide-react";
+import React from "react";
 
 interface IdCardProps {
   gameId: GameID;
@@ -19,30 +24,38 @@ interface IdCardProps {
 export default function IdCard({ gameId, priority = false }: IdCardProps) {
   const mainImage = PlaceHolderImages.find(img => img.id === gameId.mainImage);
 
+  const handleContactClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    e.stopPropagation();
+    window.open(`https://wa.me/${gameId.contact.whatsapp}`, '_blank');
+  };
+
   return (
-    <Link href={`/ids/${gameId.id}`} className="block transition-all duration-300 hover:shadow-lg hover:-translate-y-1 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 group">
+    <div className="transition-all duration-300 hover:shadow-lg hover:-translate-y-1 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 group">
       <Card className="flex flex-col overflow-hidden h-full">
-        <CardHeader className="p-0">
-          <div className="relative aspect-[4/3] w-full">
-            {mainImage && (
-              <Image
-                src={mainImage.imageUrl}
-                alt={gameId.title}
-                fill
-                className="object-cover"
-                priority={priority}
-              />
-            )}
-            <div className="absolute top-2 right-2 bg-primary/80 backdrop-blur-sm text-primary-foreground text-xs font-bold py-1 px-2 rounded-full flex items-center gap-1">
-              <Star className="w-3 h-3 fill-yellow-400 text-yellow-400" />
-              <span>Lv. {gameId.level}</span>
+        <Link href={`/ids/${gameId.id}`} className="block">
+          <CardHeader className="p-0">
+            <div className="relative aspect-[4/3] w-full">
+              {mainImage && (
+                <Image
+                  src={mainImage.imageUrl}
+                  alt={gameId.title}
+                  fill
+                  className="object-cover"
+                  priority={priority}
+                />
+              )}
+              <div className="absolute top-2 right-2 bg-primary/80 backdrop-blur-sm text-primary-foreground text-xs font-bold py-1 px-2 rounded-full flex items-center gap-1">
+                <Star className="w-3 h-3 fill-yellow-400 text-yellow-400" />
+                <span>Lv. {gameId.level}</span>
+              </div>
             </div>
-          </div>
-        </CardHeader>
-        <CardContent className="flex-grow p-4 pb-2">
-          <h3 className="font-headline text-lg font-semibold truncate text-primary">{gameId.title}</h3>
-          <p className="text-2xl font-bold text-accent mt-1">₹{gameId.price.toLocaleString()}</p>
-        </CardContent>
+          </CardHeader>
+          <CardContent className="flex-grow p-4 pb-2">
+            <h3 className="font-headline text-lg font-semibold truncate text-primary">{gameId.title}</h3>
+            <p className="text-2xl font-bold text-accent mt-1">₹{formatNumber(gameId.price)}</p>
+          </CardContent>
+        </Link>
         <CardFooter className="p-4 pt-0 flex-col items-start gap-3">
           <div className="space-y-1.5 text-xs text-muted-foreground w-full h-[60px]">
             {gameId.isVerified && <div className="flex items-center gap-1.5">
@@ -58,12 +71,19 @@ export default function IdCard({ gameId, priority = false }: IdCardProps) {
               <span>Private & secure</span>
             </div>}
           </div>
-          <div className="w-full text-sm font-medium text-accent inline-flex items-center justify-center group-hover:underline">
-            View Details
-            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+          <div className="w-full grid grid-cols-2 gap-2">
+            <Button onClick={handleContactClick} className="w-full">
+              <MessageCircle className="mr-2 h-4 w-4" /> Contact Seller
+            </Button>
+            <Link href={`/ids/${gameId.id}`} className="w-full">
+              <Button variant="outline" className="w-full group-hover:bg-accent group-hover:text-accent-foreground">
+                View Details
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Button>
+            </Link>
           </div>
         </CardFooter>
       </Card>
-    </Link>
+    </div>
   );
 }

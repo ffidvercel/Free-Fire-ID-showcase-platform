@@ -3,13 +3,14 @@ import Link from "next/link";
 import Image from "next/image";
 import { GameID } from "@/lib/data";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
+import { formatNumber } from "@/lib/format";
 import {
   Card,
   CardContent,
   CardFooter,
   CardHeader,
 } from "@/components/ui/card";
-import { ArrowRight, Star, ShieldCheck, Zap, Lock, MessageCircle, Heart } from "lucide-react";
+import { ArrowRight, Star, ShieldCheck, Zap, MessageCircle, Heart } from "lucide-react";
 import { Button } from "./ui/button";
 
 interface IdCardProps {
@@ -26,7 +27,8 @@ const formatLikes = (likes: number) => {
 
 export default function IdCard({ gameId, priority = false }: IdCardProps) {
   const mainImage = PlaceHolderImages.find(img => img.id === gameId.mainImage);
-  const whatsappLink = `https://wa.me/${gameId.contact.whatsapp.replace('+', '')}?text=I'm interested in the "${gameId.title}" account (ID: ${gameId.id}). Price: ₹${gameId.price}. Is it still available?`;
+  const message = `I'm interested in the "${gameId.title}" account (ID: ${gameId.id}). Price: ₹${formatNumber(gameId.price)}. Is it still available?`;
+  const whatsappLink = `https://wa.me/${gameId.contact.whatsapp.replace('+', '')}?text=${encodeURIComponent(message)}`;
 
   return (
     <Card className="flex flex-col overflow-hidden h-full transition-all duration-300 hover:shadow-lg hover:-translate-y-1 focus-within:shadow-lg focus-within:-translate-y-1">
@@ -51,7 +53,7 @@ export default function IdCard({ gameId, priority = false }: IdCardProps) {
         <CardContent className="flex-grow p-4 pb-2">
           <h3 className="font-headline text-lg font-semibold truncate text-primary">{gameId.title}</h3>
           <div className="flex justify-between items-center mt-1">
-            <p className="text-2xl font-bold text-accent">₹{gameId.price.toLocaleString()}</p>
+            <p className="text-2xl font-bold text-accent">₹{formatNumber(gameId.price)}</p>
             <div className="flex items-center gap-1 text-muted-foreground text-sm">
               <Heart className="w-4 h-4 text-red-500 fill-red-500" />
               <span>{formatLikes(gameId.likes)}</span>
@@ -80,7 +82,7 @@ export default function IdCard({ gameId, priority = false }: IdCardProps) {
           <Button asChild className="w-full bg-green-500 hover:bg-green-600 text-white">
             <Link href={whatsappLink} target="_blank" rel="noopener noreferrer">
               <MessageCircle className="mr-2 h-4 w-4" />
-              Buy Now
+              Contact Seller
             </Link>
           </Button>
         </div>

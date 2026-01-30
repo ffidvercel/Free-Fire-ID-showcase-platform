@@ -15,7 +15,7 @@ export default function Home() {
       </header>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {gameIds.map((id, index) => (
-          <IdCard key={id.id} gameId={id} priority={index < 4} />
+          <IdCard key={id.id} gameId={id} priority={index < 2} />
         ))}
       </div>
     </div>

@@ -6,6 +6,8 @@ import { Toaster } from '@/components/ui/toaster';
 import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
 import ClientLayout from '@/components/layout/client-layout';
+import BottomNav from '@/components/layout/bottom-nav';
+import WhatsAppFloatingButton from '@/components/whatsapp-floating-button';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const spaceGrotesk = Space_Grotesk({
@@ -86,8 +88,10 @@ export default function RootLayout({
         <ClientLayout>
           <div className="flex flex-col min-h-screen">
             <Header />
-            <main className="flex-grow">{children}</main>
+            <main className="flex-grow pb-16 md:pb-0">{children}</main>
             <Footer />
+            <BottomNav />
+            <WhatsAppFloatingButton />
           </div>
         </ClientLayout>
         <Toaster />

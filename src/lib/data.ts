@@ -88,3 +88,5 @@ export function getGameIds() {
 export function getGameId(id: string) {
   return gameIds.find((gameId) => gameId.id === id);
 }
+
+export const SUPPORT_PHONE = "+919876543210";

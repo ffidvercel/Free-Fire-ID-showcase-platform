@@ -44,3 +44,8 @@ next-env.d.ts
 firebase-debug.log
 firestore-debug.log
 npm_output.log
+dev_output.log
+dev.log
+dev2.log
+/verification/
+/test-results/

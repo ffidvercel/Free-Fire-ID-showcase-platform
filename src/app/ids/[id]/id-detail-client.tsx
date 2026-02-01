@@ -13,8 +13,9 @@ import {
 } from "@/components/ui/carousel";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Star, ThumbsUp, Crown, CheckCircle, Gamepad2, AlertTriangle, Share2 } from "lucide-react";
+import { Star, ThumbsUp, Crown, CheckCircle, Gamepad2, AlertTriangle, Share2, CheckCircle2 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { formatNumber } from "@/lib/format";
 import { useToast } from "@/hooks/use-toast";
 
 type Props = {
@@ -133,7 +134,17 @@ export default function IdDetailClient({ gameId }: Props) {
                 <h1 className="font-headline text-3xl md:text-4xl font-bold text-primary tracking-tight">
                   {gameId.title}
                 </h1>
-                <p className="text-3xl md:text-4xl font-bold text-accent mt-2">₹{gameId.price.toLocaleString()}</p>
+                <div className="flex items-center gap-3 mt-2">
+                  <p className="text-3xl md:text-4xl font-bold text-accent">₹{formatNumber(gameId.price)}</p>
+                  <Badge className="bg-green-500/10 text-green-500 hover:bg-green-500/20 border-green-500/20 gap-1 hidden sm:flex">
+                    <CheckCircle2 className="w-3 h-3" />
+                    Direct Deal | UPI
+                  </Badge>
+                </div>
+                <Badge className="bg-green-500/10 text-green-500 hover:bg-green-500/20 border-green-500/20 gap-1 flex sm:hidden mt-2 w-fit">
+                  <CheckCircle2 className="w-3 h-3" />
+                  Direct Deal | UPI
+                </Badge>
               </div>
               <Button variant="outline" size="icon" onClick={handleShare} aria-label="Share">
                 <Share2 className="h-5 w-5" />
@@ -149,7 +160,7 @@ export default function IdDetailClient({ gameId }: Props) {
             </div>
             <div className="bg-card border p-4 rounded-lg">
               <ThumbsUp className="mx-auto h-6 w-6 text-blue-500" />
-              <p className="text-lg font-semibold mt-1">{gameId.likes.toLocaleString()}</p>
+              <p className="text-lg font-semibold mt-1">{formatNumber(gameId.likes)}</p>
               <p className="text-sm text-muted-foreground">Likes</p>
             </div>
             <div className="bg-card border p-4 rounded-lg">

@@ -10,8 +10,9 @@ import {
   CardFooter,
   CardHeader,
 } from "@/components/ui/card";
-import { ArrowRight, Star, ShieldCheck, Zap, MessageCircle, Heart } from "lucide-react";
+import { ArrowRight, Star, ShieldCheck, Zap, MessageCircle, Heart, CheckCircle2 } from "lucide-react";
 import { Button } from "./ui/button";
+import { Badge } from "./ui/badge";
 
 interface IdCardProps {
   gameId: GameID;
@@ -48,6 +49,12 @@ export default function IdCard({ gameId, priority = false }: IdCardProps) {
               <Star className="w-3 h-3 fill-yellow-400 text-yellow-400" />
               <span>Lv. {gameId.level}</span>
             </div>
+            <div className="absolute bottom-2 left-2">
+              <Badge className="bg-green-500/90 hover:bg-green-500 text-[10px] py-0 px-1.5 h-5 flex items-center gap-1 border-none shadow-sm">
+                <CheckCircle2 className="w-3 h-3" />
+                Direct Deal | UPI
+              </Badge>
+            </div>
           </div>
         </CardHeader>
         <CardContent className="flex-grow p-4 pb-2">
@@ -72,17 +79,17 @@ export default function IdCard({ gameId, priority = false }: IdCardProps) {
             <span>Instant transfer</span>
           </div>}
         </div>
-        <div className="w-full grid grid-cols-2 gap-2">
-          <Button asChild variant="outline" className="w-full text-accent group">
+        <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-2">
+          <Button asChild variant="outline" size="sm" className="w-full text-accent group border-accent/30 hover:bg-accent/5">
             <Link href={`/ids/${gameId.id}`}>
               View Details
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              <ArrowRight className="ml-1.5 h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
             </Link>
           </Button>
-          <Button asChild className="w-full bg-green-500 hover:bg-green-600 text-white">
+          <Button asChild size="sm" className="w-full bg-green-500 hover:bg-green-600 text-white shadow-sm">
             <Link href={whatsappLink} target="_blank" rel="noopener noreferrer">
-              <MessageCircle className="mr-2 h-4 w-4" />
-              Contact Seller
+              <MessageCircle className="mr-1.5 h-3.5 w-3.5" />
+              Contact
             </Link>
           </Button>
         </div>

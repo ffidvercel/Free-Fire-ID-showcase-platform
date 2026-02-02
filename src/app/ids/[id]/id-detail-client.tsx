@@ -16,6 +16,7 @@ import { Button } from "@/components/ui/button";
 import { Star, ThumbsUp, Crown, CheckCircle, Gamepad2, AlertTriangle, Share2 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
+import { formatNumber } from "@/lib/format";
 
 type Props = {
   gameId: GameID;
@@ -133,7 +134,7 @@ export default function IdDetailClient({ gameId }: Props) {
                 <h1 className="font-headline text-3xl md:text-4xl font-bold text-primary tracking-tight">
                   {gameId.title}
                 </h1>
-                <p className="text-3xl md:text-4xl font-bold text-accent mt-2">₹{gameId.price.toLocaleString()}</p>
+                <p className="text-3xl md:text-4xl font-bold text-accent mt-2">₹{formatNumber(gameId.price)}</p>
               </div>
               <Button variant="outline" size="icon" onClick={handleShare} aria-label="Share">
                 <Share2 className="h-5 w-5" />
@@ -149,7 +150,7 @@ export default function IdDetailClient({ gameId }: Props) {
             </div>
             <div className="bg-card border p-4 rounded-lg">
               <ThumbsUp className="mx-auto h-6 w-6 text-blue-500" />
-              <p className="text-lg font-semibold mt-1">{gameId.likes.toLocaleString()}</p>
+              <p className="text-lg font-semibold mt-1">{formatNumber(gameId.likes)}</p>
               <p className="text-sm text-muted-foreground">Likes</p>
             </div>
             <div className="bg-card border p-4 rounded-lg">
@@ -189,7 +190,11 @@ export default function IdDetailClient({ gameId }: Props) {
               <p className="text-sm text-muted-foreground">To purchase this account, please contact the seller using the links below. All deals are made privately.</p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Button className="flex-1 bg-green-500 hover:bg-green-600 text-white" asChild>
-                  <a href={`https://wa.me/${gameId.contact.whatsapp}`} target="_blank" rel="noopener noreferrer">
+                  <a
+                    href={`https://wa.me/${gameId.contact.whatsapp.replace('+', '')}?text=${encodeURIComponent(`I'm interested in the "${gameId.title}" account (ID: ${gameId.id}). Price: ₹${formatNumber(gameId.price)}. Is it still available?`)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <WhatsAppIcon className="mr-2" /> WhatsApp
                   </a>
                 </Button>

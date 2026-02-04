@@ -13,8 +13,9 @@ import {
 } from "@/components/ui/carousel";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Star, ThumbsUp, Crown, CheckCircle, Gamepad2, AlertTriangle, Share2 } from "lucide-react";
+import { Star, ThumbsUp, Crown, CheckCircle, Gamepad2, AlertTriangle, Share2, CheckCircle2 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { formatNumber } from "@/lib/format";
 import { useToast } from "@/hooks/use-toast";
 
 type Props = {
@@ -133,7 +134,13 @@ export default function IdDetailClient({ gameId }: Props) {
                 <h1 className="font-headline text-3xl md:text-4xl font-bold text-primary tracking-tight">
                   {gameId.title}
                 </h1>
-                <p className="text-3xl md:text-4xl font-bold text-accent mt-2">₹{gameId.price.toLocaleString()}</p>
+                <div className="flex flex-wrap items-center gap-3 mt-2">
+                  <p className="text-3xl md:text-4xl font-bold text-accent">₹{formatNumber(gameId.price)}</p>
+                  <div className="flex items-center gap-1.5 text-xs font-medium text-green-600 dark:text-green-400 bg-green-500/10 px-2 py-1 rounded-full border border-green-500/20">
+                    <CheckCircle2 className="w-4 h-4" />
+                    <span>Direct Deal | UPI</span>
+                  </div>
+                </div>
               </div>
               <Button variant="outline" size="icon" onClick={handleShare} aria-label="Share">
                 <Share2 className="h-5 w-5" />
@@ -181,19 +188,19 @@ export default function IdDetailClient({ gameId }: Props) {
             </CardContent>
           </Card>
 
-          <Card className="border-accent/50 bg-accent/5">
+          <Card className="border-accent/50 bg-accent/5 shadow-md">
             <CardHeader>
               <CardTitle className="font-headline text-xl text-primary">Contact Seller Directly</CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
               <p className="text-sm text-muted-foreground">To purchase this account, please contact the seller using the links below. All deals are made privately.</p>
-              <div className="flex flex-col sm:flex-row gap-3">
-                <Button className="flex-1 bg-green-500 hover:bg-green-600 text-white" asChild>
-                  <a href={`https://wa.me/${gameId.contact.whatsapp}`} target="_blank" rel="noopener noreferrer">
-                    <WhatsAppIcon className="mr-2" /> WhatsApp
+              <div className="flex flex-col gap-3">
+                <Button className="w-full bg-green-500 hover:bg-green-600 text-white py-6 text-lg font-bold" asChild>
+                  <a href={`https://wa.me/${gameId.contact.whatsapp.replace('+', '')}?text=${encodeURIComponent(`I'm interested in "${gameId.title}" (ID: ${gameId.id}). Is it available?`)}`} target="_blank" rel="noopener noreferrer">
+                    <WhatsAppIcon className="mr-2 h-6 w-6" /> Contact on WhatsApp
                   </a>
                 </Button>
-                <Button className="flex-1 bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:opacity-90" asChild>
+                <Button variant="outline" className="w-full border-purple-500 text-purple-600 dark:text-purple-400 hover:bg-purple-50" asChild>
                   <a href={`https://instagram.com/${gameId.contact.instagram}`} target="_blank" rel="noopener noreferrer">
                     <InstagramIcon className="mr-2" /> Instagram
                   </a>

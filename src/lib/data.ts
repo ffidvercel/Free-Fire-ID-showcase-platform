@@ -20,6 +20,8 @@ export type GameID = {
   video?: string;
 };
 
+export const SUPPORT_PHONE = "+919876543210";
+
 const gameIds: GameID[] = [
   {
     id: "old-id-rare-collection-01",
